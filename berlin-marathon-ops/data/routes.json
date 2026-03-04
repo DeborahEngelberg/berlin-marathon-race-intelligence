@@ -1,0 +1,179 @@
+[
+  {
+    "id": "r001",
+    "name": "The Kurfürstendamm-to-Finish Classic",
+    "paceBand": "3:30–4:15",
+    "spots": [
+      {
+        "name": "Kurfürstendamm (km 7–9)",
+        "lat": 52.5027,
+        "lng": 13.3295,
+        "station": "Uhlandstraße (U1)",
+        "lines": ["U1"],
+        "exitGuidance": "Use Kurfürstendamm exit, walk 2 min south to course barriers",
+        "sideGuidance": "South side of Ku'damm for runner approach from west",
+        "kmMarker": 8
+      },
+      {
+        "name": "Potsdamer Platz (km 25/39)",
+        "lat": 52.5096,
+        "lng": 13.3761,
+        "station": "Potsdamer Platz (U2, S1, S2)",
+        "lines": ["U2", "S1", "S2"],
+        "exitGuidance": "Use Leipziger Platz exit for east-side viewing. EXIT NOT FOUND for exact exit number — follow signs to Leipziger Platz.",
+        "sideGuidance": "East side (Leipziger Platz) to see runners at both km 25 and km 39",
+        "kmMarker": 25
+      },
+      {
+        "name": "Brandenburger Tor Finish (km 42)",
+        "lat": 52.5163,
+        "lng": 13.3777,
+        "station": "Brandenburger Tor (S1, S2, S25, U5)",
+        "lines": ["S1", "S2", "U5"],
+        "exitGuidance": "Pariser Platz exit. Arrive 60+ min before expected finish time.",
+        "sideGuidance": "SIDE NOT FOUND — spectator positioning at finish depends on annual setup. South side of gate historically more accessible.",
+        "kmMarker": 42
+      }
+    ],
+    "feasibility": "High",
+    "failureModes": [
+      "Potsdamer Platz wrong-side trap if you exit on the west side",
+      "Finish area fills up — if you arrive <30 min before your runner, you may not get a view of the gate"
+    ],
+    "backupPlan": "If Potsdamer Platz is too crowded, skip it and go directly to finish area via U2 → Brandenburger Tor. Two views instead of three.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Spectator Guide", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/events-ede/spectator-guide/" },
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "r002",
+    "name": "The Fast-Runner Sprint Route",
+    "paceBand": "sub-3:00",
+    "spots": [
+      {
+        "name": "Start Area (km 0–1)",
+        "lat": 52.5145,
+        "lng": 13.3505,
+        "station": "Tiergarten (S5, S7)",
+        "lines": ["S5", "S7"],
+        "exitGuidance": "Walk south from Tiergarten S-Bahn to Straße des 17. Juni",
+        "sideGuidance": "North side of Straße des 17. Juni",
+        "kmMarker": 0
+      },
+      {
+        "name": "Halfway / Frankfurter Allee (km 20–22)",
+        "lat": 52.5133,
+        "lng": 13.4733,
+        "station": "Frankfurter Allee (U5, S8, S85)",
+        "lines": ["U5", "S8"],
+        "exitGuidance": "EXIT NOT FOUND — use main street-level exit and walk toward course",
+        "sideGuidance": "SIDE NOT FOUND",
+        "kmMarker": 21
+      },
+      {
+        "name": "Brandenburger Tor Finish (km 42)",
+        "lat": 52.5163,
+        "lng": 13.3777,
+        "station": "Brandenburger Tor (S1, S2, S25, U5)",
+        "lines": ["S1", "S2", "U5"],
+        "exitGuidance": "Pariser Platz exit",
+        "sideGuidance": "South side of gate if available",
+        "kmMarker": 42
+      }
+    ],
+    "feasibility": "Medium",
+    "failureModes": [
+      "Sub-3:00 runner gives you very little transit time between spots",
+      "Frankfurter Allee → Brandenburger Tor requires 25+ min transit; if runner is sub-2:50, this is nearly impossible"
+    ],
+    "backupPlan": "Drop the halfway spot. Watch start + finish only. Use the gap to secure a prime finish viewing position.",
+    "citations": [
+      { "sourceName": "LetsRun Berlin Marathon Thread", "sourceUrl": "https://www.letsrun.com/forum/" },
+      { "sourceName": "Berlin Marathon Course Map", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/your-race/course/" }
+    ]
+  },
+  {
+    "id": "r003",
+    "name": "The Kreuzberg Local",
+    "paceBand": "3:30–4:15",
+    "spots": [
+      {
+        "name": "Kottbusser Damm / Hermannplatz (km 14–16)",
+        "lat": 52.4869,
+        "lng": 13.4250,
+        "station": "Hermannplatz (U7, U8)",
+        "lines": ["U7", "U8"],
+        "exitGuidance": "Kottbusser Damm exit",
+        "sideGuidance": "West side of Kottbusser Damm",
+        "kmMarker": 15
+      },
+      {
+        "name": "Schöneberg / Hauptstraße (km 30–32)",
+        "lat": 52.4845,
+        "lng": 13.3510,
+        "station": "Kleistpark (U7)",
+        "lines": ["U7"],
+        "exitGuidance": "Hauptstraße exit, walk 3 min to course",
+        "sideGuidance": "East side of Hauptstraße for runner approach from south",
+        "kmMarker": 31
+      },
+      {
+        "name": "Kurfürstenstraße area (km 37–38)",
+        "lat": 52.5030,
+        "lng": 13.3580,
+        "station": "Nollendorfplatz (U1, U2, U3, U4)",
+        "lines": ["U1", "U2", "U3", "U4"],
+        "exitGuidance": "Nollendorfplatz main exit, walk east",
+        "sideGuidance": "SIDE NOT FOUND",
+        "kmMarker": 37
+      }
+    ],
+    "feasibility": "High",
+    "failureModes": [
+      "Requires U7 reliability — usually fine but check for weekend maintenance",
+      "Schöneberg section can feel empty compared to marquee spots"
+    ],
+    "backupPlan": "If U7 is disrupted, walk from Hermannplatz to Schöneberg via Mehringdamm (U6/U7) — adds 10 min but avoids surface transit.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" },
+      { "sourceName": "BVG Service Information", "sourceUrl": "https://www.bvg.de/en" }
+    ]
+  },
+  {
+    "id": "r004",
+    "name": "The Minimum-Walk Comfort Route",
+    "paceBand": "4:15+",
+    "spots": [
+      {
+        "name": "Kurfürstendamm (km 7–9)",
+        "lat": 52.5027,
+        "lng": 13.3295,
+        "station": "Wittenbergplatz (U1, U2, U3)",
+        "lines": ["U1", "U2", "U3"],
+        "exitGuidance": "Main exit, walk 5 min west on Tauentzienstraße to Ku'damm course section",
+        "sideGuidance": "South side for oncoming runners",
+        "kmMarker": 8
+      },
+      {
+        "name": "Brandenburger Tor Finish (km 42)",
+        "lat": 52.5163,
+        "lng": 13.3777,
+        "station": "Brandenburger Tor (S1, S2, S25, U5)",
+        "lines": ["S1", "S2", "U5"],
+        "exitGuidance": "Pariser Platz exit. With a 4:15+ runner you have 3+ hours to transit and position.",
+        "sideGuidance": "Choose early for best position",
+        "kmMarker": 42
+      }
+    ],
+    "feasibility": "High",
+    "failureModes": [
+      "Only two viewing spots, but near-guaranteed success",
+      "Long wait at finish but this is a feature not a bug — bring a book"
+    ],
+    "backupPlan": "No backup needed — this route has maximum margin for error.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Spectator Guide", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/events-ede/spectator-guide/" }
+    ]
+  }
+]

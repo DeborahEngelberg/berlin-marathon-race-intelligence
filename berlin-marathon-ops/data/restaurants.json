@@ -1,0 +1,98 @@
+[
+  {
+    "id": "rest001",
+    "name": "Vapiano (Potsdamer Platz)",
+    "neighborhood": "Mitte / Potsdamer Platz",
+    "station": "Potsdamer Platz (U2, S1, S2)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Large pasta portions, customizable. Good carb-load option Saturday evening.",
+    "reservationHack": "No reservations — counter service. Arrive before 18:00 Saturday to avoid expo crowds.",
+    "hoursProofText": "HOURS NOT FOUND — verify Saturday evening hours",
+    "citations": [{ "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest002",
+    "name": "I Due Forni",
+    "neighborhood": "Schöneberg",
+    "station": "Nollendorfplatz (U1, U2, U3, U4)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Neapolitan pizza, large portions. Veteran runner favorite for Saturday night carb-loading.",
+    "reservationHack": "Reserve by Thursday for Saturday dinner. Fills up marathon weekend.",
+    "hoursProofText": "HOURS NOT FOUND",
+    "citations": [{ "sourceName": "Berlin Runner Community", "sourceUrl": "https://www.berlin-marathon.com" }],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest003",
+    "name": "Zeit für Brot (Various Locations)",
+    "neighborhood": "Mitte / Kreuzberg / Prenzlauer Berg",
+    "station": "Varies by location",
+    "purposeTags": ["breakfast", "pre-race"],
+    "orderNotes": "Artisan bakery. Excellent pre-race breakfast pastries and bread. Opens early.",
+    "reservationHack": "No reservation needed. Multiple locations — find one near your hotel.",
+    "hoursProofText": "Typically opens 07:00 weekdays, 08:00 weekends — verify for race Sunday",
+    "citations": [{ "sourceName": "Berlin Food Guide", "sourceUrl": "https://www.berlin.de/en/restaurants/" }],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest004",
+    "name": "Mustafa's Gemüse Kebap",
+    "neighborhood": "Kreuzberg",
+    "station": "Mehringdamm (U6, U7)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Berlin's most famous döner kebab. Post-race protein bomb. Worth the queue.",
+    "reservationHack": "No reservations. Queue is typically 30–60 min. Race Sunday queue may be shorter as tourists are at the finish.",
+    "hoursProofText": "HOURS NOT FOUND — typically opens 10:00",
+    "citations": [{ "sourceName": "Berlin Food Guide", "sourceUrl": "https://www.berlin.de/en/restaurants/" }],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest005",
+    "name": "Hauptbahnhof Food Court",
+    "neighborhood": "Mitte / Hauptbahnhof",
+    "station": "Berlin Hauptbahnhof (all lines)",
+    "purposeTags": ["post-race", "breakfast", "spectator-hangout"],
+    "orderNotes": "Multiple options: bakeries, fast food, sit-down restaurants. Reliable fallback for any meal. Also serves as proven reunion point.",
+    "reservationHack": "No reservation needed. Multiple levels of food options.",
+    "hoursProofText": "Station shops typically open 08:00–22:00 daily including Sundays",
+    "citations": [{ "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }],
+    "confidence": "High"
+  },
+  {
+    "id": "rest006",
+    "name": "The Barn Coffee Roasters",
+    "neighborhood": "Mitte / Prenzlauer Berg",
+    "station": "Rosenthaler Platz (U8)",
+    "purposeTags": ["breakfast", "spectator-hangout"],
+    "orderNotes": "Specialty coffee. Good pre-race caffeine source. Light breakfast pastries.",
+    "reservationHack": "No reservation. Small space — arrive early.",
+    "hoursProofText": "HOURS NOT FOUND — typically 08:00–18:00",
+    "citations": [{ "sourceName": "Berlin Food Guide", "sourceUrl": "https://www.berlin.de/en/restaurants/" }],
+    "confidence": "Low"
+  },
+  {
+    "id": "rest007",
+    "name": "Curry 36",
+    "neighborhood": "Kreuzberg",
+    "station": "Mehringdamm (U6, U7)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Iconic Berlin currywurst. Quick post-race refuel. Cash-heavy.",
+    "reservationHack": "Counter service, no reservation. Quick turnover.",
+    "hoursProofText": "HOURS NOT FOUND — typically opens 09:00",
+    "citations": [{ "sourceName": "Berlin Food Guide", "sourceUrl": "https://www.berlin.de/en/restaurants/" }],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest008",
+    "name": "Augustiner am Gendarmenmarkt",
+    "neighborhood": "Mitte",
+    "station": "Hausvogteiplatz (U2) / Stadtmitte (U2, U6)",
+    "purposeTags": ["post-race", "spectator-hangout", "carb-load"],
+    "orderNotes": "Bavarian beer hall. Excellent post-race reward. Schnitzel + beer. Large portions.",
+    "reservationHack": "Reserve for Saturday dinner. Walk-in possible Sunday afternoon but wait likely.",
+    "hoursProofText": "HOURS NOT FOUND",
+    "citations": [{ "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }],
+    "confidence": "Med"
+  }
+]
