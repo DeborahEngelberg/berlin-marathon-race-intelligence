@@ -1,0 +1,82 @@
+[
+  {
+    "id": "l001",
+    "anchor": "Mitte (Friedrichstraße / Unter den Linden)",
+    "station": "Friedrichstraße (S1, S2, S5, S7, U6)",
+    "frictionScore": "Low",
+    "finishScore": "High",
+    "mobilityScore": "High",
+    "quietRisk": "High — finish-area noise until 18:00+, road closures affect hotel access",
+    "avoidWarning": "Road closures may require detours to reach hotel. Confirm with hotel which entrance is accessible on race day.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Lodging Reports", "sourceUrl": "https://www.berlin-marathon.com" },
+      { "sourceName": "BMW Berlin Marathon Spectator Info", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/events-ede/spectator-guide/" }
+    ]
+  },
+  {
+    "id": "l002",
+    "anchor": "Charlottenburg (Zoologischer Garten / Savignyplatz)",
+    "station": "Zoologischer Garten (U2, U9, S5, S7, S75)",
+    "frictionScore": "Med",
+    "finishScore": "Med",
+    "mobilityScore": "High",
+    "quietRisk": "Low — away from finish chaos, established hotel district",
+    "avoidWarning": "None. Excellent spectator base. Ku'damm course section is walkable.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community Reports", "sourceUrl": "https://www.berlin-marathon.com" },
+      { "sourceName": "BVG Service Information", "sourceUrl": "https://www.bvg.de/en" }
+    ]
+  },
+  {
+    "id": "l003",
+    "anchor": "Prenzlauer Berg (Schönhauser Allee / Eberswalder)",
+    "station": "Eberswalder Str. (U2) / Schönhauser Allee (U2, S8, S85)",
+    "frictionScore": "Med",
+    "finishScore": "Med",
+    "mobilityScore": "Med",
+    "quietRisk": "Low — residential neighborhood, away from course",
+    "avoidWarning": "U2 is your lifeline — if U2 is disrupted, transit options narrow significantly.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "l004",
+    "anchor": "Kreuzberg (Mehringdamm / Kottbusser Tor)",
+    "station": "Mehringdamm (U6, U7) / Kottbusser Tor (U1, U8)",
+    "frictionScore": "Med",
+    "finishScore": "Med",
+    "mobilityScore": "High",
+    "quietRisk": "Low — nightlife area but Saturday night may be noisy",
+    "avoidWarning": "Saturday night noise from bars/clubs. Choose a hotel on a quiet side street, not directly on Oranienstraße.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "l005",
+    "anchor": "Hauptbahnhof Area",
+    "station": "Berlin Hauptbahnhof (S5, S7, S75, U5, ICE/IC)",
+    "frictionScore": "Low",
+    "finishScore": "High",
+    "mobilityScore": "High",
+    "quietRisk": "Med — train station area has some noise, but finish is walkable",
+    "avoidWarning": "Hotels here tend to be expensive. Good backup reunion point if staying here.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "l006",
+    "anchor": "Schöneberg (Nollendorfplatz / Bayerischer Platz)",
+    "station": "Nollendorfplatz (U1, U2, U3, U4)",
+    "frictionScore": "Med",
+    "finishScore": "Med",
+    "mobilityScore": "High",
+    "quietRisk": "Low — quiet residential, good transit hub",
+    "avoidWarning": "Course passes through neighborhood — some local road closures. But U-Bahn access is excellent.",
+    "citations": [
+      { "sourceName": "BVG / Berlin Marathon Community", "sourceUrl": "https://www.bvg.de/en" }
+    ]
+  }
+]

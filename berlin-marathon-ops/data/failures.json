@@ -1,0 +1,79 @@
+[
+  {
+    "id": "f001",
+    "title": "Wrong-Side Trap at Potsdamer Platz",
+    "whyFails": "Spectators exit Potsdamer Platz station at the wrong surface exit and end up on the opposite side of the course from where they intended. Course barriers and construction zones make surface-level crossing impossible. They lose 20–40 minutes backtracking underground.",
+    "veteranFix": "Before exiting, check which exit leads to your desired side. Leipziger Platz exit = east of course. Potsdamer Straße exit = west of course. Use the Straßenunterführungen der U-Bahnhöfe (station underpasses) to traverse beneath the course.",
+    "alternatePlan": "If already trapped on wrong side: re-enter U-Bahn, ride one stop in either direction, exit on correct side. Do NOT attempt to cross at street level.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community / rbb24", "sourceUrl": "https://www.rbb24.de/" },
+      { "sourceName": "Berlin Marathon Forum", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "f002",
+    "title": "Trying to Cross Course Near Finish (km 38–42)",
+    "whyFails": "The final 4 km along Straße des 17. Juni through the Brandenburger Tor is the most heavily secured section. Police enforce a complete no-crossing zone from approximately 09:00 to 17:00. Spectators who need to switch sides are completely blocked.",
+    "veteranFix": "Decide which side of the finish corridor you need BEFORE the race starts. Position accordingly. If you must change sides, use U5 to Brandenburger Tor or S-Bahn to reach the north/south sides via underground.",
+    "alternatePlan": "Accept the side you're on. The finish is visible from both sides of the gate, though one side may have better views depending on annual setup.",
+    "citations": [
+      { "sourceName": "Berlin Police Marathon Notice", "sourceUrl": "https://www.berlin.de/polizei/" },
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "f003",
+    "title": "Overly Aggressive Spectator Hopping (4+ Spots)",
+    "whyFails": "Spectators plan 4 or more viewing positions, assuming transit will be smooth. In reality, U-Bahn crowding on race day adds 5–10 min per journey, surface transit is suspended, and crowd density at popular spots requires 10–15 min positioning time. A 4-spot plan for a 3:30 marathoner has zero margin for error.",
+    "veteranFix": "Limit to 3 spots maximum (the Three-View Rule). Budget 30–40 min transit+positioning between each spot. For runners 4:00+, 2 spots is often optimal with maximum comfort.",
+    "alternatePlan": "If already behind schedule after spot 2, skip spot 3 and go directly to finish area. Securing a finish view is more valuable than a rushed mid-course glimpse.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community Reports", "sourceUrl": "https://www.berlin-marathon.com" },
+      { "sourceName": "Berlin Marathon Spectator Guide", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/events-ede/spectator-guide/" }
+    ]
+  },
+  {
+    "id": "f004",
+    "title": "Late Arrival to Athletes' Village (After 08:30)",
+    "whyFails": "Arriving after 08:30 triggers a cascade failure: security screening takes 20+ min at peak, toilet lines are 30–40 min, gear drop closes, and corral access narrows. Runners end up in their corral stressed, unfueled, and with a full bladder.",
+    "veteranFix": "Arrive at Athletes' Village by 07:30 at the latest. Use toilets immediately upon entry. Drop gear bag. Then relax in the village until corral call. Build in a 30-min buffer beyond what you think you need.",
+    "alternatePlan": "If late: skip the village toilets entirely. Use a café toilet en route to the village (Charlottenburg area). Drop gear immediately. Go straight to corral. Use the corral port-a-potties (shorter lines near front corrals).",
+    "citations": [
+      { "sourceName": "LetsRun Berlin Marathon Thread", "sourceUrl": "https://www.letsrun.com/forum/" },
+      { "sourceName": "BMW Berlin Marathon Athlete Guide", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/your-race/athlete-guide/" }
+    ]
+  },
+  {
+    "id": "f005",
+    "title": "No Reunion Plan → 45–90 Min Post-Finish Search",
+    "whyFails": "Runners and spectators assume they'll find each other via phone after the finish. But 40,000+ spectators in the Tiergarten area cause severe cell network degradation. Texts fail to send, calls drop, GPS is inaccurate in the crowd. Without a pre-agreed letter sign or landmark, reunion averages 45–90 minutes of wandering.",
+    "veteranFix": "Pre-agree on a meeting letter sign (A–Z at official meeting point), PLUS a time-delayed backup ('if not found by [finish time + 90 min], meet at Hauptbahnhof food court'). Write the plan on your arm in marker.",
+    "alternatePlan": "If cell service fails completely: both parties walk to Hauptbahnhof (central station). It's the largest, most findable landmark near the finish area, with food, warmth, and working Wi-Fi.",
+    "citations": [
+      { "sourceName": "Berlin Marathon Community Reports", "sourceUrl": "https://www.berlin-marathon.com" },
+      { "sourceName": "BMW Berlin Marathon Spectator Info", "sourceUrl": "https://www.bmw-berlin-marathon.com/en/events-ede/spectator-guide/" }
+    ]
+  },
+  {
+    "id": "f006",
+    "title": "Overreliance on Buses and Trams",
+    "whyFails": "All surface bus and tram routes that cross the marathon course are rerouted or completely suspended from ~07:00 to 17:00. Spectators who plan transit hops using the M41, M29, or tram lines discover their routes don't exist on race day. This is the #1 transit planning failure.",
+    "veteranFix": "Plan ALL race-day transit using U-Bahn and S-Bahn ONLY. Ignore every bus and tram route. Even buses that appear unaffected on route maps may have stops relocated or frequencies reduced.",
+    "alternatePlan": "If stranded without U/S access: walk. Most spectator moves in central Berlin are 15–25 min on foot. Walking beats waiting for a rerouted bus.",
+    "citations": [
+      { "sourceName": "BVG Marathon Disruption Notice", "sourceUrl": "https://www.bvg.de/en" },
+      { "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }
+    ]
+  },
+  {
+    "id": "f007",
+    "title": "Going Out Too Fast (The Flat Course Trap)",
+    "whyFails": "Berlin's opening kilometers through Charlottenburg feel slightly downhill, the crowd energy is euphoric, and the flat profile gives a false sense of speed sustainability. 60%+ of first-timers run 15–30 sec/km faster than goal pace in the first 5 km. This pace debt catches up brutally at km 30–35.",
+    "veteranFix": "Run the first 5 km DELIBERATELY 5–10 sec/km SLOWER than goal pace. Ignore the watch showing you're 'behind' — you're banking energy. Lock onto the pacing group closest to your goal and do not pass them before km 10.",
+    "alternatePlan": "If already too fast through km 10: consciously slow to goal pace immediately. Do not try to 'bank time.' Every second banked in km 1–10 costs 2–3 seconds in km 35–42.",
+    "citations": [
+      { "sourceName": "Marathon Handbook Berlin Guide", "sourceUrl": "https://marathonhandbook.com/berlin-marathon/" },
+      { "sourceName": "LetsRun Berlin Marathon Thread", "sourceUrl": "https://www.letsrun.com/forum/" }
+    ]
+  }
+]

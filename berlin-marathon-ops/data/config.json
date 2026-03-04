@@ -1,0 +1,26 @@
+{
+  "siteName": "Berlin Marathon Race Intelligence",
+  "siteDescription": "Runner and Spectator Strategy Guide for the BMW Berlin Marathon",
+  "raceDate": "2025-09-28",
+  "raceStartTime": "09:15",
+  "buyMeCoffeeUrl": "https://buymeacoffee.com/debbiesoph",
+  "formspreeEndpoint": "https://formspree.io/f/xgolgbnv",
+  "analytics": {
+    "enabled": false,
+    "provider": "local",
+    "goatcounterUrl": ""
+  },
+  "tabs": [
+    { "id": "overview", "label": "Overview", "icon": "home" },
+    { "id": "runner-guide", "label": "Runner Guide", "icon": "running" },
+    { "id": "spectator-guide", "label": "Spectator Guide", "icon": "eye" },
+    { "id": "viewing-routes", "label": "Viewing Routes", "icon": "map" },
+    { "id": "crossing-map", "label": "Crossing Map", "icon": "git-branch" },
+    { "id": "finish-strategy", "label": "Finish Strategy", "icon": "flag" },
+    { "id": "transit", "label": "Transit", "icon": "train" },
+    { "id": "where-to-stay", "label": "Where to Stay", "icon": "bed" },
+    { "id": "food", "label": "Food", "icon": "utensils" },
+    { "id": "common-mistakes", "label": "Common Mistakes", "icon": "alert-triangle" },
+    { "id": "support", "label": "Support", "icon": "heart" }
+  ]
+}
