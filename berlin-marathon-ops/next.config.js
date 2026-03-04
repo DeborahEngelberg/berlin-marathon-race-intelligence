@@ -5,9 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Uncomment and set for GitHub Pages deployment:
-  // basePath: '/berlin-marathon-ops',
-  // assetPrefix: '/berlin-marathon-ops/',
+  basePath: '/berlin-marathon-race-intelligence',
+  assetPrefix: '/berlin-marathon-race-intelligence/',
 };
 
 module.exports = nextConfig;
