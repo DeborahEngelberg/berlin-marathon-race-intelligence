@@ -226,27 +226,28 @@ export default function FoodRestaurants({
     return result;
   }, [filters.confidence, activePurposes, activeLocations, searchQuery]);
 
-  const showIntelGap = restaurants.length < MINIMUM_TARGET;
+  const showMoreComing = restaurants.length < MINIMUM_TARGET;
 
   return (
     <div>
       {/* Section Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Utensils size={24} className="text-[var(--accent)]" />
-          Food + Restaurants
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          Where to eat marathon weekend: carb-loading, breakfast,
-          post-race
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+            <Utensils size={22} className="text-amber-600 dark:text-amber-400" />
+          </div>
+          <h2 className="section-header">Food &amp; Restaurants</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          Marathon weekend eating strategy: from carb-loading dinners to race-morning breakfast to post-finish celebration meals. Filtered by purpose and proximity to the course and finish area.
         </p>
-        <p className="text-xs text-[var(--text-muted)] mt-1">
+        <p className="text-xs text-[var(--text-muted)]">
           {restaurants.length} verified entries
         </p>
       </div>
 
-      {/* Intel Gap Banner */}
-      {showIntelGap && (
+      {/* More Recommendations Coming Soon */}
+      {showMoreComing && (
         <div className="mb-6 rounded-lg border-2 border-orange-400 dark:border-orange-600 bg-orange-50 dark:bg-orange-900/10 p-4">
           <div className="flex items-start gap-3">
             <AlertTriangle
@@ -256,13 +257,13 @@ export default function FoodRestaurants({
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 border border-orange-300 dark:border-orange-700">
-                  In Progress
+                  More Coming Soon
                 </span>
               </div>
               <p className="text-sm text-orange-800 dark:text-orange-300">
-                Additional recommendations will be added soon. This section currently contains{' '}
+                More recommendations coming soon. This section currently contains{' '}
                 <strong>{restaurants.length}</strong> verified entries out of a
-                minimum target of {MINIMUM_TARGET}. Contribute your intel using the feedback form on the
+                target of {MINIMUM_TARGET}. Contribute your experience using the feedback form on the
                 Support page.
               </p>
             </div>

@@ -88,10 +88,15 @@ export default function TransitStrategy({ filters }: { filters: FilterState }) {
   return (
     <div>
       {/* Section Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Transit Strategy</h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          U-Bahn vs S-Bahn, what works, what fails, and when walking wins
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+            <Train size={22} className="text-cyan-600 dark:text-cyan-400" />
+          </div>
+          <h2 className="section-header">Transit Strategy</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          Berlin&apos;s public transit runs during the marathon, but many routes are disrupted. This section explains which lines work reliably, which stations to avoid, and when walking is faster than waiting. All surface buses and trams crossing the course are suspended from ~07:00 to 17:00.
         </p>
       </div>
 

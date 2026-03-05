@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { ChevronDown, ChevronRight, Clock, AlertTriangle } from 'lucide-react';
+import { ChevronDown, ChevronRight, Clock, AlertTriangle, User } from 'lucide-react';
 import BulletCard from '@/components/ui/BulletCard';
 import { Bullet, FilterState } from '@/lib/types';
 import bulletsData from '@/data/bullets.json';
@@ -160,14 +160,25 @@ export default function RunnerIntelligence({ filters }: Props) {
 
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Clock size={24} className="text-[var(--accent)]" />
-          Runner Guide
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          Everything you need to know about race morning, course execution, and what veterans wish they&apos;d known.
+      {/* Section Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+            <User size={22} className="text-blue-600 dark:text-blue-400" />
+          </div>
+          <h2 className="section-header">Runner Guide</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          Everything you need for race morning and course execution. From Athletes&apos; Village logistics and toilet strategy to pacing psychology and aid station tactics, based on what experienced Berlin Marathon runners wish they&apos;d known.
         </p>
+        <p className="text-xs text-[var(--text-muted)] mb-3">This helps you: build a race morning timeline, avoid common start-line mistakes, and plan your pacing strategy.</p>
+        <div className="flex flex-wrap gap-2">
+          {SUBSECTIONS.slice(0, 5).map((sub) => (
+            <a key={sub.id} href={`#${sub.id}`} onClick={(e) => { e.preventDefault(); toggleSection(sub.id); document.getElementById(sub.id)?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">
+              {sub.label}
+            </a>
+          ))}
+        </div>
       </div>
 
       <ChecklistGenerator />
@@ -177,7 +188,7 @@ export default function RunnerIntelligence({ filters }: Props) {
         const isExpanded = expandedSections.has(sub.id);
 
         return (
-          <div key={sub.id} className="mb-4">
+          <div key={sub.id} id={sub.id} className="mb-4">
             <button
               onClick={() => toggleSection(sub.id)}
               className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"

@@ -111,17 +111,25 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
   return (
     <div>
       {/* Section Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <GitBranch size={24} className="text-[var(--accent)]" />
-          Crossing Database
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          Berlin spectator superpower — how to cross the marathon course
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center">
+            <GitBranch size={22} className="text-teal-600 dark:text-teal-400" />
+          </div>
+          <h2 className="section-header">Crossing Map</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          The Berlin Marathon course creates a barrier across the city. This database documents every known way to cross it: underpasses, station tunnels, bridges, and designated crossings. Use it to plan how you will move between viewing spots without getting trapped on the wrong side.
         </p>
-        <p className="text-xs text-[var(--text-muted)] mt-1">
+        <p className="text-xs text-[var(--text-muted)] mb-3">
           {crossings.length} crossings documented
         </p>
+        <p className="text-xs text-[var(--text-muted)] mb-3">This helps you: find safe crossing points, avoid getting trapped, and navigate between viewing spots.</p>
+        <div className="flex flex-wrap gap-2">
+          <a href="#crossing-map-view" onClick={(e) => { e.preventDefault(); setView('map'); document.getElementById('crossing-map-view')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Map View</a>
+          <a href="#crossing-table-view" onClick={(e) => { e.preventDefault(); setView('table'); document.getElementById('crossing-table-view')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Table View</a>
+          <a href="#crossing-helper" onClick={(e) => { e.preventDefault(); setShowHelper(true); document.getElementById('crossing-helper')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Decision Helper</a>
+        </div>
       </div>
 
       {/* View Toggle + Search */}
@@ -203,7 +211,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
 
       {/* Map View */}
       {view === 'map' && (
-        <div className="mb-6">
+        <div id="crossing-map-view" className="mb-6">
           {mapMarkers.length > 0 ? (
             <MapView
               markers={mapMarkers}
@@ -216,19 +224,35 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
               No crossings with map coordinates match current filters.
             </div>
           )}
-          <p className="text-xs text-[var(--text-muted)] mt-2">
-            Pin colors: <span className="text-blue-500">blue</span> = station tunnel,{' '}
-            <span className="text-purple-500">purple</span> = road tunnel,{' '}
-            <span className="text-green-500">green</span> = underpass,{' '}
-            <span className="text-orange-500">orange</span> = designated crossing,{' '}
-            <span className="text-yellow-500">yellow</span> = bridge
-          </p>
+          <div className="map-legend">
+            <span className="text-xs font-medium text-[var(--text)] mr-2">Legend:</span>
+            <div className="map-legend-item">
+              <div className="map-legend-dot" style={{ backgroundColor: '#3B82F6' }} />
+              <span>Station Tunnel</span>
+            </div>
+            <div className="map-legend-item">
+              <div className="map-legend-dot" style={{ backgroundColor: '#8B5CF6' }} />
+              <span>Road Tunnel</span>
+            </div>
+            <div className="map-legend-item">
+              <div className="map-legend-dot" style={{ backgroundColor: '#10B981' }} />
+              <span>Underpass</span>
+            </div>
+            <div className="map-legend-item">
+              <div className="map-legend-dot" style={{ backgroundColor: '#E85D04' }} />
+              <span>Designated Crossing</span>
+            </div>
+            <div className="map-legend-item">
+              <div className="map-legend-dot" style={{ backgroundColor: '#F59E0B' }} />
+              <span>Bridge</span>
+            </div>
+          </div>
         </div>
       )}
 
       {/* Table View */}
       {view === 'table' && (
-        <div className="mb-6">
+        <div id="crossing-table-view" className="mb-6">
           {filteredCrossings.length > 0 ? (
             filteredCrossings.map((c) => <CrossingRow key={c.id} crossing={c} />)
           ) : (
@@ -240,7 +264,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
       )}
 
       {/* Crossing Decision Helper */}
-      <div className="card p-4 border-l-4 border-l-[var(--accent)]">
+      <div id="crossing-helper" className="card p-4 border-l-4 border-l-[var(--accent)]">
         <button
           onClick={() => setShowHelper(!showHelper)}
           className="w-full text-left flex items-center gap-2"
@@ -327,7 +351,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
                               {c.name}
                             </p>
                             <p className="text-xs text-[var(--text-secondary)] mt-0.5">
-                              {c.type} — {c.locationText}
+                              {c.type} / {c.locationText}
                             </p>
                           </div>
                           <span
@@ -351,7 +375,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
                           <div className="mt-2">
                             {sideUnknown ? (
                               <p className="text-xs text-orange-500 font-medium">
-                                Side outcome data incomplete — verify on site.
+                                Side outcome data incomplete. Verify on site.
                               </p>
                             ) : (
                               <p className="text-xs text-[var(--text-secondary)]">
@@ -373,7 +397,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
                 ) : (
                   <div className="p-4 rounded-lg bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800">
                     <p className="text-sm font-medium text-orange-700 dark:text-orange-400">
-                      DATA NOT FOUND — use U-station underpass rule
+                      DATA NOT FOUND. Use U-station underpass rule
                     </p>
                     <p className="text-xs text-orange-600 dark:text-orange-300 mt-1">
                       No documented crossings for this station. Default strategy: enter the
@@ -381,7 +405,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
                       der U-Bahnh&ouml;fe) to emerge on the desired side of the course.
                     </p>
                     <p className="text-xs text-[var(--text-muted)] mt-2 italic">
-                      Source: Berlin Marathon Community / rbb24 —{' '}
+                      Source: Berlin Marathon Community / rbb24:{' '}
                       <a
                         href="https://www.rbb24.de/"
                         target="_blank"

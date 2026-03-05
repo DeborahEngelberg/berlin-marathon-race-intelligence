@@ -20,7 +20,7 @@ const failures = failuresData as FailureMode[];
 
 function formatFailureAsText(f: FailureMode): string {
   const lines = [
-    `FAILURE MODE: ${f.title}`,
+    `COMMON MISTAKE: ${f.title}`,
     '',
     `WHY IT HAPPENS:`,
     f.whyFails,
@@ -76,13 +76,15 @@ export default function FailureModes({ filters }: { filters: FilterState }) {
   return (
     <div>
       {/* Section Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <AlertTriangle size={24} className="text-red-500" />
-          Common Mistakes
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          The mistakes playbook: what goes wrong and how veterans fix it
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+            <AlertTriangle size={22} className="text-red-600 dark:text-red-400" />
+          </div>
+          <h2 className="section-header">Common Mistakes</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          The most frequent mistakes runners and spectators make at the Berlin Marathon, and how experienced participants avoid them. Each entry includes what goes wrong, why it happens, and a concrete alternative plan.
         </p>
       </div>
 

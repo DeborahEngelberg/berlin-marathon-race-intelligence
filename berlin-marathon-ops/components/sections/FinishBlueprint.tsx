@@ -176,18 +176,26 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
   return (
     <div>
       {/* Section Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Flag size={24} className="text-[var(--accent)]" />
-          Finish Line Blueprint
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          What actually happens after you cross the line: the full post-finish sequence, real wait times, and reunion strategies that work.
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+            <Flag size={22} className="text-orange-600 dark:text-orange-400" />
+          </div>
+          <h2 className="section-header">Finish Strategy</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          What actually happens after you cross the line. The post-finish area is large, crowded, and disorienting. This section covers the full sequence from finish line to reunion, including real wait times and strategies that work when cell service fails.
         </p>
+        <p className="text-xs text-[var(--text-muted)] mb-3">This helps you: understand the finish chute sequence, budget time for post-finish logistics, and create a reunion plan.</p>
+        <div className="flex flex-wrap gap-2">
+          <a href="#post-finish-sequence" onClick={(e) => { e.preventDefault(); setBlueprintExpanded(true); document.getElementById('post-finish-sequence')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Post-Finish Sequence</a>
+          <a href="#timed-reality" onClick={(e) => { e.preventDefault(); setTimedExpanded(true); document.getElementById('timed-reality')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Timed Reality</a>
+          <a href="#reunion-wizard" onClick={(e) => { e.preventDefault(); setWizardExpanded(true); document.getElementById('reunion-wizard')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Reunion Wizard</a>
+        </div>
       </div>
 
       {/* ─── A) Visual Blueprint Stepper ─── */}
-      <div className="card mb-6">
+      <div id="post-finish-sequence" className="card mb-6">
         <button
           onClick={() => setBlueprintExpanded(!blueprintExpanded)}
           className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"
@@ -246,7 +254,7 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
       </div>
 
       {/* ─── B) Timed Reality Section ─── */}
-      <div className="card mb-6">
+      <div id="timed-reality" className="card mb-6">
         <button
           onClick={() => setTimedExpanded(!timedExpanded)}
           className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"
@@ -314,7 +322,7 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
       </div>
 
       {/* ─── C) Reunion Strategy Wizard ─── */}
-      <div className="card mb-6">
+      <div id="reunion-wizard" className="card mb-6">
         <button
           onClick={() => setWizardExpanded(!wizardExpanded)}
           className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"

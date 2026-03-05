@@ -57,13 +57,15 @@ export default function Support() {
 
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Heart size={24} className="text-[var(--accent)]" />
-          Support This Guide
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          This guide is free, open-source, and community-driven. Help make it better.
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center">
+            <Heart size={22} className="text-pink-600 dark:text-pink-400" />
+          </div>
+          <h2 className="section-header">Support</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          This guide is free, open-source, and community-driven. If you found it useful, you can support the research behind it or contribute your own experience to help future runners and spectators.
         </p>
       </div>
 

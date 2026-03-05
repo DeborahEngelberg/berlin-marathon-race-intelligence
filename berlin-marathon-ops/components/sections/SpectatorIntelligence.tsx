@@ -43,18 +43,28 @@ export default function SpectatorIntelligence({ filters }: Props) {
 
   return (
     <div>
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Eye size={24} className="text-[var(--accent)]" />
-          Spectator Guide
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          Tactical viewing strategies, wrong-side traps, and the Three-View Rule.
+      {/* Section Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+            <Eye size={22} className="text-purple-600 dark:text-purple-400" />
+          </div>
+          <h2 className="section-header">Spectator Guide</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          How to watch the Berlin Marathon effectively. The course layout and barriers make it difficult to move across the route, so choosing the right locations is critical. Learn where to stand, what traps to avoid, and how to see your runner multiple times.
         </p>
+        <p className="text-xs text-[var(--text-muted)] mb-3">This helps you: pick the best viewing positions, avoid wrong-side traps, and plan realistic multi-spot routes.</p>
+        <div className="flex flex-wrap gap-2">
+          <a href="#three-view-rule-section" onClick={(e) => { e.preventDefault(); document.getElementById('three-view-rule-section')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Three-View Rule</a>
+          <a href="#wrong-side-trap" onClick={(e) => { e.preventDefault(); document.getElementById('wrong-side-trap')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Wrong-Side Trap</a>
+          <a href="#best-viewing-zones" onClick={(e) => { e.preventDefault(); toggleSection('best-viewing-zones'); document.getElementById('best-viewing-zones')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Best Viewing Zones</a>
+          <a href="#trap-zones" onClick={(e) => { e.preventDefault(); toggleSection('trap-zones'); document.getElementById('trap-zones')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-xs px-2.5 py-1 rounded-lg border border-[var(--border)] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">Trap Zones</a>
+        </div>
       </div>
 
       {/* Three-View Rule Explainer */}
-      <div className="card p-4 mb-6 border-l-4 border-l-[var(--accent)]">
+      <div id="three-view-rule-section" className="card p-4 mb-6 border-l-4 border-l-[var(--accent)]">
         <h3 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
           <Eye size={16} className="text-[var(--accent)]" />
           The Three-View Rule
@@ -76,10 +86,14 @@ export default function SpectatorIntelligence({ filters }: Props) {
             <p className="text-xs text-red-600 dark:text-red-300">Failure-prone. Zero margin for error. Usually results in missing the runner at 1+ spots.</p>
           </div>
         </div>
+        <div className="mt-3 p-2.5 rounded-lg bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800">
+          <p className="text-xs font-semibold text-amber-700 dark:text-amber-400 uppercase tracking-wide mb-0.5">Why it matters</p>
+          <p className="text-xs text-amber-700 dark:text-amber-300">Spectators who overplan their route spend more time in transit than watching the race. Pick fewer spots and enjoy them.</p>
+        </div>
       </div>
 
       {/* Wrong-Side Trap Module */}
-      <div className="card p-4 mb-6 border-l-4 border-l-red-500">
+      <div id="wrong-side-trap" className="card p-4 mb-6 border-l-4 border-l-red-500">
         <h3 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
           <AlertTriangle size={16} className="text-red-500" />
           Wrong-Side Trap Warning: Potsdamer Platz
@@ -96,6 +110,10 @@ export default function SpectatorIntelligence({ filters }: Props) {
             Source: <a href="https://www.rbb24.de/" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">Berlin Marathon Community / rbb24</a>
           </p>
         </div>
+        <div className="mt-3 p-2.5 rounded-lg bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800">
+          <p className="text-xs font-semibold text-amber-700 dark:text-amber-400 uppercase tracking-wide mb-0.5">Why it matters</p>
+          <p className="text-xs text-amber-700 dark:text-amber-300">Spectators who stand on the wrong side of the course often miss their runner because they cannot cross. This is the single most common spectator failure.</p>
+        </div>
       </div>
 
       {SUBSECTIONS.map(sub => {
@@ -105,7 +123,7 @@ export default function SpectatorIntelligence({ filters }: Props) {
         const isExpanded = expandedSections.has(sub.id);
 
         return (
-          <div key={sub.id} className="mb-4">
+          <div key={sub.id} id={sub.id} className="mb-4">
             <button
               onClick={() => toggleSection(sub.id)}
               className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"

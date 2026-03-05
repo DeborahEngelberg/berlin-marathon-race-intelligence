@@ -25,7 +25,12 @@ export default function RouteCard({ route }: { route: Route }) {
       `Pace: ${route.paceBand}`,
       `Feasibility: ${route.feasibility}`,
       '',
-      ...route.spots.map((s, i) => `Spot ${i + 1}: ${s.name} (${s.station}) — ${s.exitGuidance}`),
+      ...route.spots.map((s, i) => [
+        `Spot ${i + 1}: ${s.name}${s.kmMarker !== undefined ? ` (KM ${s.kmMarker})` : ''}`,
+        `  Transit: ${s.station} (${s.lines.join(', ')})`,
+        `  Exit: ${s.exitGuidance}`,
+        `  Side: ${s.sideGuidance}`,
+      ].join('\n')),
       '',
       `Backup: ${route.backupPlan}`,
     ].join('\n');
@@ -78,9 +83,16 @@ export default function RouteCard({ route }: { route: Route }) {
             <span className="text-[var(--text-muted)]">
               {route.spots.length} viewing spots
             </span>
-            <span className="text-[var(--text-muted)]">
-              {route.spots.map(s => s.name.split('(')[0].trim()).join(' → ')}
-            </span>
+          </div>
+          {/* Quick spot overview */}
+          <div className="flex flex-wrap items-center gap-1 mt-2 text-xs text-[var(--text-muted)]">
+            {route.spots.map((s, i) => (
+              <span key={i} className="flex items-center gap-1">
+                {i > 0 && <span className="text-[var(--accent)]">&rarr;</span>}
+                <span>{s.name.split('(')[0].trim()}</span>
+                {s.kmMarker !== undefined && <span className="text-[var(--accent)] font-medium">KM {s.kmMarker}</span>}
+              </span>
+            ))}
           </div>
         </div>
         <div className="flex gap-1 flex-shrink-0 ml-2">
@@ -95,61 +107,95 @@ export default function RouteCard({ route }: { route: Route }) {
 
       {expanded && (
         <div className="px-4 pb-4 border-t border-[var(--border)]">
-          {/* Spots */}
-          <div className="pt-4 space-y-3">
+          {/* Spots - Structured Layout */}
+          <div className="pt-4 space-y-0">
             {route.spots.map((spot, i) => (
-              <div key={i} className="flex gap-3 items-start">
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-8 h-8 rounded-full bg-[var(--accent)] text-white flex items-center justify-center text-sm font-bold">
-                    {i + 1}
-                  </div>
-                  {i < route.spots.length - 1 && (
-                    <div className="w-0.5 h-8 bg-[var(--border)] mt-1" />
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-medium text-sm">{spot.name}</span>
-                    {spot.kmMarker !== undefined && (
-                      <span className="text-xs text-[var(--text-muted)]">km {spot.kmMarker}</span>
+              <div key={i} className="relative">
+                {/* Spot Card */}
+                <div className="flex gap-3 items-start pb-2">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-[var(--accent)] text-white flex items-center justify-center text-sm font-bold shadow-sm">
+                      {i + 1}
+                    </div>
+                    {i < route.spots.length - 1 && (
+                      <div className="w-0.5 h-full bg-[var(--border)] mt-1" />
                     )}
                   </div>
-                  <div className="space-y-1 text-xs text-[var(--text-secondary)]">
-                    <div className="flex items-center gap-1">
-                      <Train size={12} />
-                      <span>{spot.station} ({spot.lines.join(', ')})</span>
+                  <div className="flex-1 min-w-0 pb-3">
+                    {/* Spot Header */}
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Spot {i + 1}</span>
+                      {spot.kmMarker !== undefined && (
+                        <span className="text-xs font-mono text-[var(--text-muted)]">KM {spot.kmMarker}</span>
+                      )}
                     </div>
-                    <div className="flex items-start gap-1">
-                      <Navigation size={12} className="mt-0.5 flex-shrink-0" />
-                      <span className={spot.exitGuidance.includes('NOT FOUND') ? 'text-orange-500' : ''}>
-                        {spot.exitGuidance}
-                      </span>
+
+                    {/* Location Name */}
+                    <h4 className="font-semibold text-sm text-[var(--text)] mb-2">{spot.name}</h4>
+
+                    {/* Transit Info */}
+                    <div className="rounded-lg bg-[var(--bg-elevated)] p-3 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Train size={13} className="text-[var(--accent)] flex-shrink-0" />
+                        <span className="text-xs font-medium text-[var(--text)]">Transit</span>
+                        <span className="text-xs text-[var(--text-secondary)]">{spot.station}</span>
+                        <div className="flex gap-1">
+                          {spot.lines.map(line => (
+                            <span key={line} className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[var(--bg-card)] text-[var(--accent)] border border-[var(--border)]">{line}</span>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Navigation size={13} className="text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
+                        <span className={`text-xs ${spot.exitGuidance.includes('NOT FOUND') ? 'text-orange-500' : 'text-[var(--text-secondary)]'}`}>
+                          {spot.exitGuidance}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <MapPin size={13} className="text-[var(--text-muted)] flex-shrink-0 mt-0.5" />
+                        <span className={`text-xs ${spot.sideGuidance.includes('NOT FOUND') ? 'text-orange-500' : 'text-[var(--text-secondary)]'}`}>
+                          {spot.sideGuidance}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-start gap-1">
-                      <MapPin size={12} className="mt-0.5 flex-shrink-0" />
-                      <span className={spot.sideGuidance.includes('NOT FOUND') ? 'text-orange-500' : ''}>
-                        {spot.sideGuidance}
-                      </span>
-                    </div>
+
                     <a
                       href={getGoogleMapsUrl(spot)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[var(--accent)] hover:underline"
+                      className="inline-flex items-center gap-1 text-xs text-[var(--accent)] hover:underline mt-2"
                     >
                       <ExternalLink size={10} /> Open in Google Maps
                     </a>
                   </div>
                 </div>
+
+                {/* Transit between spots */}
+                {i < route.spots.length - 1 && (
+                  <div className="ml-[18px] pl-6 pb-3 border-l-2 border-dashed border-[var(--border)]">
+                    <div className="flex items-center gap-2 py-1.5 px-3 rounded bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/30">
+                      <Train size={12} className="text-blue-500" />
+                      <span className="text-xs text-blue-700 dark:text-blue-400">
+                        Transit to Spot {i + 2}: {route.spots[i + 1].station} ({route.spots[i + 1].lines.join(', ')})
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
+          {/* Pace Compatibility */}
+          <div className="mt-3 p-3 rounded-lg bg-[var(--bg-elevated)] border border-[var(--border)]">
+            <p className="text-xs font-medium text-[var(--text)] mb-1">Runner Pace Compatibility</p>
+            <p className="text-xs text-[var(--text-secondary)]">Designed for runners finishing in <strong className="text-[var(--accent)]">{route.paceBand}</strong>. Transit timing assumes this pace band.</p>
+          </div>
+
           {/* Failure modes */}
           {route.failureModes.length > 0 && (
-            <div className="mt-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30">
+            <div className="mt-3 p-3 rounded-lg bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30">
               <div className="flex items-center gap-1.5 text-red-700 dark:text-red-400 text-xs font-medium mb-2">
-                <AlertTriangle size={12} /> Failure Modes
+                <AlertTriangle size={12} /> Common Mistakes for This Route
               </div>
               <ul className="text-xs text-red-600 dark:text-red-300 space-y-1 list-disc ml-4">
                 {route.failureModes.map((fm, i) => <li key={i}>{fm}</li>)}
@@ -171,7 +217,7 @@ export default function RouteCard({ route }: { route: Route }) {
                 href={c.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] underline flex items-center gap-0.5"
+                className="text-[10px] text-[var(--text-muted)] hover:text-[var(--accent)] underline flex items-center gap-0.5"
               >
                 <ExternalLink size={9} /> {c.sourceName}
               </a>

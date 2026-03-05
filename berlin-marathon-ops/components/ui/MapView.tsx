@@ -9,6 +9,7 @@ interface Marker {
   label: string;
   popup?: string;
   color?: string;
+  type?: 'crossing' | 'viewing' | 'transit' | 'default';
 }
 
 interface Props {
@@ -17,9 +18,10 @@ interface Props {
   zoom?: number;
   height?: string;
   connectMarkers?: boolean;
+  showLegend?: boolean;
 }
 
-export default function MapView({ markers, center, zoom = 12, height = '300px', connectMarkers = false }: Props) {
+export default function MapView({ markers, center, zoom = 12, height = '300px', connectMarkers = false, showLegend = false }: Props) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const [leafletLoaded, setLeafletLoaded] = useState(false);
@@ -134,8 +136,33 @@ export default function MapView({ markers, center, zoom = 12, height = '300px', 
   }
 
   return (
-    <div style={{ height }} className="rounded-lg overflow-hidden border border-[var(--border)]">
-      <div ref={mapRef} style={{ height: '100%', width: '100%' }} />
+    <div>
+      <div style={{ height }} className="rounded-lg overflow-hidden border border-[var(--border)]">
+        <div ref={mapRef} style={{ height: '100%', width: '100%' }} />
+      </div>
+
+      {/* Map Legend */}
+      {showLegend && (
+        <div className="map-legend">
+          <span className="text-xs font-medium text-[var(--text)] mr-2">Legend:</span>
+          <div className="map-legend-item">
+            <div className="map-legend-dot" style={{ backgroundColor: '#3B82F6' }} />
+            <span>Crossing</span>
+          </div>
+          <div className="map-legend-item">
+            <div className="map-legend-dot" style={{ backgroundColor: '#E85D04' }} />
+            <span>Viewing Spot</span>
+          </div>
+          <div className="map-legend-item">
+            <div className="map-legend-dot" style={{ backgroundColor: '#8B5CF6' }} />
+            <span>Transit Station</span>
+          </div>
+          <div className="map-legend-item">
+            <div className="map-legend-dot" style={{ backgroundColor: '#10B981' }} />
+            <span>Last Stop</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

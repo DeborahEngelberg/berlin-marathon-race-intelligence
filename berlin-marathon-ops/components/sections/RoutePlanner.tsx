@@ -93,14 +93,15 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
   return (
     <div>
       {/* Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Map size={24} className="text-[var(--accent)]" />
-          Route Planner
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          Pre-planned spectator routes with transit directions, viewing spots, and backup plans.
-          Each route respects the Three-View Rule.
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+            <Map size={22} className="text-green-600 dark:text-green-400" />
+          </div>
+          <h2 className="section-header">Viewing Routes</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          Pre-planned spectator routes with transit directions, viewing spots, and backup plans. Each route is designed to respect the Three-View Rule. Pick your runner&apos;s pace band, and we show you which spots to visit and how to get between them.
         </p>
       </div>
 
@@ -262,7 +263,7 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
                       lat: s.lat!,
                       lng: s.lng!,
                       label: s.name,
-                      popup: `${s.station} — ${s.exitGuidance}`,
+                      popup: `${s.station}: ${s.exitGuidance}`,
                       color: i === route.spots.length - 1 ? 'green' : 'orange',
                     }))}
                   connectMarkers={true}

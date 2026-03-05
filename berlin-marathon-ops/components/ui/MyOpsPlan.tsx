@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ClipboardList, X, Trash2, Download, Copy, Check } from 'lucide-react';
+import { ClipboardList, X, Trash2, Copy, Check } from 'lucide-react';
 import { getSavedItems, removeItem, clearAllSaved } from '@/lib/store';
 import { SavedItem } from '@/lib/types';
 
@@ -22,7 +22,7 @@ export default function MyOpsPlan() {
   };
 
   const handleClearAll = () => {
-    if (confirm('Remove all saved items from your Ops Plan?')) {
+    if (confirm('Remove all saved items from your Saved Strategy?')) {
       clearAllSaved();
       setItems([]);
     }
@@ -42,7 +42,7 @@ export default function MyOpsPlan() {
         className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] hover:border-[var(--accent)] text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
       >
         <ClipboardList size={14} />
-        <span className="hidden sm:inline">My Ops Plan</span>
+        <span className="hidden sm:inline">Saved Strategy</span>
         {items.length > 0 && (
           <span className="w-5 h-5 rounded-full bg-[var(--accent)] text-white text-xs flex items-center justify-center">
             {items.length}
@@ -56,7 +56,7 @@ export default function MyOpsPlan() {
           <div className="relative w-96 max-w-full h-full bg-[var(--bg-card)] border-l border-[var(--border)] shadow-2xl overflow-y-auto">
             <div className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)] p-4">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-[var(--text)]">My Ops Plan</h3>
+                <h3 className="font-semibold text-[var(--text)]">Saved Strategy</h3>
                 <div className="flex gap-2">
                   {items.length > 0 && (
                     <>

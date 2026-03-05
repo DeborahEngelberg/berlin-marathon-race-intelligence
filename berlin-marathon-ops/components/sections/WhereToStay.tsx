@@ -180,15 +180,17 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
   return (
     <div>
       {/* Section Header */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Bed size={24} className="text-[var(--accent)]" />
-          Where To Stay
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
-          Logistics-ranked neighborhoods: race-morning friction, finish extraction, spectator mobility
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
+            <Bed size={22} className="text-indigo-600 dark:text-indigo-400" />
+          </div>
+          <h2 className="section-header">Where to Stay</h2>
+        </div>
+        <p className="section-description max-w-3xl">
+          Your hotel location affects everything on race weekend: how easy race morning is for runners, how mobile spectators can be, and how quickly everyone can reach the finish. These neighborhoods are ranked by logistics, not luxury.
         </p>
-        <p className="text-xs text-[var(--text-muted)] mt-1">
+        <p className="text-xs text-[var(--text-muted)]">
           {displayLodgings.length} neighborhoods analyzed
         </p>
       </div>
