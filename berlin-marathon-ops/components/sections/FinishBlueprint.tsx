@@ -198,7 +198,7 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
         </button>
 
         {blueprintExpanded && (
-          <div className="p-4 pt-2">
+          <div className="p-4 pt-2 animate-fade-slide-down">
             <div className="relative">
               {BLUEPRINT_STEPS.map((step, i) => {
                 const StepIcon = step.icon;
@@ -260,7 +260,7 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
         </button>
 
         {timedExpanded && (
-          <div className="p-4 pt-2 space-y-3">
+          <div className="p-4 pt-2 space-y-3 animate-fade-slide-down">
             {/* Data-driven bullets rendered via BulletCard */}
             {timedBullets.length > 0 && (
               <div className="space-y-2">
@@ -325,7 +325,7 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
         </button>
 
         {wizardExpanded && (
-          <div className="p-4 pt-2 space-y-4">
+          <div className="p-4 pt-2 space-y-4 animate-fade-slide-down">
             <p className="text-sm text-[var(--text-secondary)]">
               Choose a reunion strategy. Each generates a copyable plan you can share with your group before race day.
             </p>

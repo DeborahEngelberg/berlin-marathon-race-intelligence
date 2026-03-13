@@ -53,27 +53,32 @@ export default function SpectatorIntelligence({ filters }: Props) {
         </p>
       </div>
 
-      {/* Three-View Rule Explainer */}
-      <div className="card p-4 mb-6 border-l-4 border-l-[var(--accent)]">
-        <h3 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Eye size={16} className="text-[var(--accent)]" />
-          The Three-View Rule
-        </h3>
-        <p className="text-sm text-[var(--text-secondary)] mb-3">
+      {/* Three-View Rule — hero-level treatment */}
+      <div className="tool-card p-6 mb-8">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-[var(--accent-gold)]/15 flex items-center justify-center flex-shrink-0">
+            <Eye size={20} className="text-[var(--accent-gold)]" />
+          </div>
+          <div>
+            <h3 className="font-bold text-lg text-[var(--text)]">The Three-View Rule</h3>
+            <p className="text-xs text-[var(--accent-gold)] font-semibold uppercase tracking-wider">Core Spectator Principle</p>
+          </div>
+        </div>
+        <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">
           Attempting more than 3 viewing positions consistently fails. Transit disruptions, course crossing delays, and crowd density make a 4th move nearly impossible for runners slower than 3:15.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-3 rounded-lg bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800">
-            <div className="text-green-700 dark:text-green-400 text-xs font-medium mb-1">2 Spots</div>
-            <p className="text-xs text-green-600 dark:text-green-300">Maximum comfort. Best for 4:15+ runners. Near-guaranteed success.</p>
+          <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800">
+            <div className="text-green-700 dark:text-green-400 text-sm font-bold mb-1">2 Spots</div>
+            <p className="text-xs text-green-600 dark:text-green-300 leading-relaxed">Maximum comfort. Best for 4:15+ runners. Near-guaranteed success.</p>
           </div>
-          <div className="p-3 rounded-lg bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800">
-            <div className="text-yellow-700 dark:text-yellow-400 text-xs font-medium mb-1">3 Spots</div>
-            <p className="text-xs text-yellow-600 dark:text-yellow-300">Optimal. Budget 30-40 min transit between spots. Requires U-Bahn planning.</p>
+          <div className="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800">
+            <div className="text-yellow-700 dark:text-yellow-400 text-sm font-bold mb-1">3 Spots</div>
+            <p className="text-xs text-yellow-600 dark:text-yellow-300 leading-relaxed">Optimal. Budget 30-40 min transit between spots. Requires U-Bahn planning.</p>
           </div>
-          <div className="p-3 rounded-lg bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800">
-            <div className="text-red-700 dark:text-red-400 text-xs font-medium mb-1">4+ Spots</div>
-            <p className="text-xs text-red-600 dark:text-red-300">Failure-prone. Zero margin for error. Usually results in missing the runner at 1+ spots.</p>
+          <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800">
+            <div className="text-red-700 dark:text-red-400 text-sm font-bold mb-1">4+ Spots</div>
+            <p className="text-xs text-red-600 dark:text-red-300 leading-relaxed">Failure-prone. Zero margin for error. Usually results in missing the runner at 1+ spots.</p>
           </div>
         </div>
       </div>
@@ -115,7 +120,7 @@ export default function SpectatorIntelligence({ filters }: Props) {
               <span className="ml-auto text-xs text-[var(--text-muted)]">{sectionBullets.length} items</span>
             </button>
             {isExpanded && (
-              <div className="mt-2 ml-2">
+              <div className="mt-2 ml-2 animate-fade-slide-down">
                 {sectionBullets.length > 0 ? (
                   sectionBullets.map(b => <BulletCard key={b.id} bullet={b} />)
                 ) : (

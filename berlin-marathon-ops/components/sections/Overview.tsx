@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, User, Eye, MapPin, GitBranch, Flag, Train, Bed, Utensils, AlertTriangle, ArrowRight } from 'lucide-react';
+import { User, Eye, MapPin, GitBranch, Flag, Train, Bed, Utensils, ArrowRight } from 'lucide-react';
 
 interface Props {
   onNavigate: (tabId: string) => void;
@@ -50,31 +50,49 @@ const TIPS = [
 export default function Overview({ onNavigate }: Props) {
   return (
     <div>
-      {/* Hero */}
-      <div className="mb-10">
-        <div className="mb-6">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--text)] mb-3 leading-tight">
-            Your complete guide to<br />
-            <span className="text-[var(--accent)]">race day in Berlin</span>
-          </h2>
-          <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed">
-            Whether you are running the BMW Berlin Marathon or cheering from the sidelines, this guide covers logistics, strategy, and lessons from experienced runners and spectators.
-          </p>
-        </div>
+      {/* Hero — Berlin-themed with marathon identity */}
+      <div className="mb-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent)] via-[#1555B0] to-[#0D3B7A] p-8 sm:p-10 mb-8">
+          {/* Subtle course silhouette decoration */}
+          <div className="absolute inset-0 opacity-[0.06]">
+            <svg viewBox="0 0 800 300" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+              <path d="M0,150 Q100,80 200,150 T400,120 T600,160 T800,130" fill="none" stroke="white" strokeWidth="140" strokeLinecap="round" />
+            </svg>
+          </div>
 
-        <div className="flex flex-wrap gap-3 mb-8">
-          <button
-            onClick={() => onNavigate('runner-guide')}
-            className="px-5 py-2.5 rounded-lg bg-[var(--accent)] text-white font-semibold text-sm hover:bg-[var(--accent-dark)] transition-colors flex items-center gap-2"
-          >
-            <User size={16} /> I&apos;m Running
-          </button>
-          <button
-            onClick={() => onNavigate('spectator-guide')}
-            className="px-5 py-2.5 rounded-lg border-2 border-[var(--accent)] text-[var(--accent)] font-semibold text-sm hover:bg-[var(--accent)] hover:text-white transition-colors flex items-center gap-2"
-          >
-            <Eye size={16} /> I&apos;m Spectating
-          </button>
+          <div className="relative z-10">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="h-1 w-8 bg-[var(--accent-gold)] rounded-full" />
+              <span className="text-xs font-semibold tracking-widest uppercase text-blue-200">BMW Berlin-Marathon</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
+              Your complete guide to<br />
+              race day in Berlin
+            </h2>
+            <p className="text-base sm:text-lg text-blue-100 max-w-2xl leading-relaxed mb-8">
+              Whether you are running the marathon or cheering from the sidelines, this guide covers logistics, strategy, and lessons from experienced runners and spectators.
+            </p>
+
+            {/* Runner / Spectator decision — prominent CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => onNavigate('runner-guide')}
+                className="px-6 py-3 rounded-xl bg-white text-[var(--accent)] font-bold text-sm hover:bg-blue-50 transition-colors flex items-center justify-center gap-2 shadow-lg"
+              >
+                <User size={18} /> I&apos;m Running
+              </button>
+              <button
+                onClick={() => onNavigate('spectator-guide')}
+                className="px-6 py-3 rounded-xl border-2 border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+              >
+                <Eye size={18} /> I&apos;m Spectating
+              </button>
+            </div>
+          </div>
+
+          {/* Gold + Red accent bar at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--accent-gold)] via-[var(--accent-red)] to-[var(--accent-gold)]" />
         </div>
       </div>
 

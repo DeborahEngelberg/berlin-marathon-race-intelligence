@@ -53,7 +53,7 @@ export default function MyOpsPlan() {
       {open && (
         <div className="fixed inset-0 z-50 flex justify-end">
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="relative w-96 max-w-full h-full bg-[var(--bg-card)] border-l border-[var(--border)] shadow-2xl overflow-y-auto">
+          <div className="relative w-96 max-w-full h-full bg-[var(--bg-card)] border-l border-[var(--border)] shadow-2xl overflow-y-auto animate-slide-in-right">
             <div className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)] p-4">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-[var(--text)]">My Ops Plan</h3>
@@ -82,8 +82,8 @@ export default function MyOpsPlan() {
               {items.length === 0 ? (
                 <div className="text-center py-12 text-[var(--text-muted)]">
                   <ClipboardList size={32} className="mx-auto mb-3 opacity-40" />
-                  <p className="text-sm">No items saved yet</p>
-                  <p className="text-xs mt-1">Use the bookmark icon on any card to save it here</p>
+                  <p className="text-sm font-medium text-[var(--text)]">Build your race-day playbook</p>
+                  <p className="text-xs mt-1.5 max-w-[260px] mx-auto leading-relaxed">Save routes, tips, and restaurants as you explore — then copy your plan to share with your group.</p>
                 </div>
               ) : (
                 <div className="space-y-2">

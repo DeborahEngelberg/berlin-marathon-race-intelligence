@@ -94,7 +94,7 @@ export default function RouteCard({ route }: { route: Route }) {
       </button>
 
       {expanded && (
-        <div className="px-4 pb-4 border-t border-[var(--border)]">
+        <div className="px-4 pb-4 border-t border-[var(--border)] animate-fade-slide-down">
           {/* Spots */}
           <div className="pt-4 space-y-3">
             {route.spots.map((spot, i) => (

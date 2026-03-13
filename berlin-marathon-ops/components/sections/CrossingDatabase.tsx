@@ -212,8 +212,10 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
               height="400px"
             />
           ) : (
-            <div className="p-8 rounded-lg bg-[var(--bg-elevated)] text-center text-sm text-[var(--text-muted)]">
-              No crossings with map coordinates match current filters.
+            <div className="p-8 rounded-lg bg-[var(--bg-elevated)] text-center">
+              <GitBranch size={32} className="mx-auto mb-3 text-[var(--text-muted)] opacity-40" />
+              <p className="text-sm font-medium text-[var(--text)] mb-1">No crossings on map</p>
+              <p className="text-xs text-[var(--text-muted)]">Try removing type filters or broadening your search.</p>
             </div>
           )}
           <p className="text-xs text-[var(--text-muted)] mt-2">
@@ -232,15 +234,17 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
           {filteredCrossings.length > 0 ? (
             filteredCrossings.map((c) => <CrossingRow key={c.id} crossing={c} />)
           ) : (
-            <div className="p-8 rounded-lg bg-[var(--bg-elevated)] text-center text-sm text-[var(--text-muted)]">
-              No crossings match your search or filters.
+            <div className="p-8 rounded-lg bg-[var(--bg-elevated)] text-center">
+              <GitBranch size={32} className="mx-auto mb-3 text-[var(--text-muted)] opacity-40" />
+              <p className="text-sm font-medium text-[var(--text)] mb-1">No crossings found</p>
+              <p className="text-xs text-[var(--text-muted)]">Try a different search term or remove type filters.</p>
             </div>
           )}
         </div>
       )}
 
       {/* Crossing Decision Helper */}
-      <div className="card p-4 border-l-4 border-l-[var(--accent)]">
+      <div className="tool-card p-5">
         <button
           onClick={() => setShowHelper(!showHelper)}
           className="w-full text-left flex items-center gap-2"
@@ -255,7 +259,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
         </button>
 
         {showHelper && (
-          <div className="mt-4 space-y-4">
+          <div className="mt-4 space-y-4 animate-fade-slide-down">
             <p className="text-sm text-[var(--text-secondary)]">
               Select a station and desired side to find recommended crossings nearby.
             </p>
@@ -331,7 +335,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
                             </p>
                           </div>
                           <span
-                            className={`badge text-[10px] ${
+                            className={`badge text-[11px] ${
                               c.confidence === 'High'
                                 ? 'badge-high'
                                 : c.confidence === 'Med'

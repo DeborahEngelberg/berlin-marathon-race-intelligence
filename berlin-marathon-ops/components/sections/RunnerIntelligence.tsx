@@ -55,7 +55,7 @@ function ChecklistGenerator() {
   }
 
   return (
-    <div className="card p-4 mb-6">
+    <div className="tool-card p-5 mb-6">
       <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
         <Clock size={16} className="text-[var(--accent)]" />
         Race Morning Checklist Generator
@@ -98,7 +98,7 @@ function ChecklistGenerator() {
       </button>
 
       {generated && (
-        <div className="mt-4 space-y-2">
+        <div className="mt-4 space-y-2 animate-fade-slide-down">
           <div className="text-xs text-[var(--text-muted)] mb-2">
             Total buffer: {totalBuffer} min | Risk level: {riskTolerance}
           </div>
@@ -187,7 +187,7 @@ export default function RunnerIntelligence({ filters }: Props) {
               <span className="ml-auto text-xs text-[var(--text-muted)]">{sectionBullets.length} items</span>
             </button>
             {isExpanded && (
-              <div className="mt-2 ml-2">
+              <div className="mt-2 ml-2 animate-fade-slide-down">
                 {sectionBullets.length > 0 ? (
                   sectionBullets.map(b => <BulletCard key={b.id} bullet={b} />)
                 ) : (

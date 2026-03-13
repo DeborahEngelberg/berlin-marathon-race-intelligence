@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   --accent: #1C69D4;
   --accent-light: #4A8FE7;
   --accent-dark: #1555B0;
   --accent-red: #E30613;
+  --accent-gold: #C8991E;
+  --accent-gold-light: #E8B930;
   --bg: #F5F5F5;
   --bg-card: #FFFFFF;
   --bg-elevated: #EAEAEF;
@@ -20,6 +22,8 @@
   --warning: #F59E0B;
   --danger: #EF4444;
   --info: #1C69D4;
+  --tool-bg: #EFF4FB;
+  --tool-border: #B8D0F0;
 }
 
 .dark {
@@ -30,6 +34,8 @@
   --text-secondary: #D1D5DB;
   --text-muted: #6B7280;
   --border: #374151;
+  --tool-bg: #161B28;
+  --tool-border: #253048;
 }
 
 * {
@@ -41,6 +47,11 @@ body {
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings use Syne (geometric, Bauhaus-adjacent) */
+h1, h2, h3, .heading-display {
+  font-family: 'Syne', system-ui, sans-serif;
 }
 
 /* Scrollbar styling */
@@ -74,15 +85,21 @@ body {
 .badge-de { @apply bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400; }
 .badge-time { @apply bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-400; }
 
-/* Card base */
+/* Card base — subtle hover only */
 .card {
   @apply rounded-lg border transition-all duration-200;
   background: var(--bg-card);
   border-color: var(--border);
 }
 .card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+/* Tool cards — distinct treatment for interactive tools/wizards */
+.tool-card {
+  @apply rounded-xl border-2 transition-all duration-200;
+  background: var(--tool-bg);
+  border-color: var(--tool-border);
 }
 
 /* Stopwatch callout */
@@ -103,4 +120,38 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
+}
+
+/* Berlin Marathon brand stripe */
+.berlin-stripe {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 33%, var(--accent-red) 33%, var(--accent-red) 66%, var(--accent-gold) 66%, var(--accent-gold) 100%);
+  height: 3px;
+}
+
+/* Animations */
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-slide-down {
+  animation: fadeSlideDown 0.18s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.2s ease-out;
 }

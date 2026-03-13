@@ -40,7 +40,7 @@ function confidenceBadge(level: 'High' | 'Med' | 'Low') {
   };
   return (
     <span
-      className={`inline-block text-[10px] font-medium px-2 py-0.5 rounded-full border ${styles[level]}`}
+      className={`inline-block text-[11px] font-medium px-2 py-0.5 rounded-full border ${styles[level]}`}
     >
       {level}
     </span>
@@ -58,7 +58,7 @@ function purposeBadge(tag: string) {
   return (
     <span
       key={tag}
-      className="inline-block text-[10px] font-medium px-2 py-0.5 rounded-full border border-[var(--border)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]"
+      className="inline-block text-[11px] font-medium px-2 py-0.5 rounded-full border border-[var(--border)] bg-[var(--bg-elevated)] text-[var(--text-secondary)]"
     >
       {labelMap[tag] || tag}
     </span>
@@ -79,7 +79,7 @@ function CitationList({
           href={c.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[10px] text-[var(--accent)] hover:underline"
+          className="inline-flex items-center gap-1 text-[11px] text-[var(--accent)] hover:underline"
         >
           <ExternalLink size={10} />
           {c.sourceName}
@@ -255,7 +255,7 @@ export default function FoodRestaurants({
             />
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 border border-orange-300 dark:border-orange-700">
+                <span className="inline-block text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200 border border-orange-300 dark:border-orange-700">
                   In Progress
                 </span>
               </div>
@@ -333,8 +333,10 @@ export default function FoodRestaurants({
       {/* Restaurant Cards */}
       <div className="space-y-3">
         {filtered.length === 0 && (
-          <div className="text-center py-12 text-sm text-[var(--text-muted)]">
-            No restaurants match the current filters.
+          <div className="text-center py-12">
+            <Utensils size={32} className="mx-auto mb-3 text-[var(--text-muted)] opacity-40" />
+            <p className="text-sm font-medium text-[var(--text)] mb-1">No restaurants match these filters</p>
+            <p className="text-xs text-[var(--text-muted)]">Try broadening your purpose or location filters.</p>
           </div>
         )}
 
@@ -402,11 +404,11 @@ export default function FoodRestaurants({
 
               {/* Expanded Details */}
               {isExpanded && (
-                <div className="px-4 pb-4 pt-1 border-t border-[var(--border)] bg-[var(--bg-elevated)]">
+                <div className="px-4 pb-4 pt-1 border-t border-[var(--border)] bg-[var(--bg-elevated)] animate-fade-slide-down">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Station */}
                     <div>
-                      <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5">
+                      <p className="text-[11px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5">
                         Nearest Station
                       </p>
                       <p className="text-xs text-[var(--text-secondary)]">
@@ -416,7 +418,7 @@ export default function FoodRestaurants({
 
                     {/* Hours */}
                     <div>
-                      <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5 flex items-center gap-1">
+                      <p className="text-[11px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5 flex items-center gap-1">
                         <Clock size={10} />
                         Hours
                       </p>
@@ -427,7 +429,7 @@ export default function FoodRestaurants({
 
                     {/* Order Notes */}
                     <div>
-                      <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5">
+                      <p className="text-[11px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5">
                         What to Order
                       </p>
                       <p className="text-xs text-[var(--text-secondary)]">
@@ -437,7 +439,7 @@ export default function FoodRestaurants({
 
                     {/* Reservation Hack */}
                     <div>
-                      <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5">
+                      <p className="text-[11px] font-medium text-[var(--text-muted)] uppercase tracking-wider mb-0.5">
                         Reservation Hack
                       </p>
                       <p className="text-xs text-[var(--text-secondary)]">

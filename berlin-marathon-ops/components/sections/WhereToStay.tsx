@@ -131,7 +131,7 @@ function CitationList({ citations }: { citations: { sourceName: string; sourceUr
           href={c.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[10px] text-[var(--accent)] hover:underline"
+          className="inline-flex items-center gap-1 text-[11px] text-[var(--accent)] hover:underline"
         >
           <ExternalLink size={10} />
           {c.sourceName}
@@ -327,22 +327,22 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
 
               <div className="grid grid-cols-3 gap-2 mb-3">
                 <div className="text-center">
-                  <p className="text-[10px] text-[var(--text-muted)] uppercase mb-1">Friction</p>
+                  <p className="text-[11px] text-[var(--text-muted)] uppercase mb-1">Friction</p>
                   {frictionBadge(l.frictionScore)}
                 </div>
                 <div className="text-center">
-                  <p className="text-[10px] text-[var(--text-muted)] uppercase mb-1">Finish</p>
+                  <p className="text-[11px] text-[var(--text-muted)] uppercase mb-1">Finish</p>
                   {frictionBadge(l.finishScore)}
                 </div>
                 <div className="text-center">
-                  <p className="text-[10px] text-[var(--text-muted)] uppercase mb-1">Mobility</p>
+                  <p className="text-[11px] text-[var(--text-muted)] uppercase mb-1">Mobility</p>
                   {frictionBadge(l.mobilityScore)}
                 </div>
               </div>
 
               <div className="space-y-2">
                 <div>
-                  <p className="text-[10px] text-[var(--text-muted)] uppercase mb-0.5">Quiet Sleep Risk</p>
+                  <p className="text-[11px] text-[var(--text-muted)] uppercase mb-0.5">Quiet Sleep Risk</p>
                   <p className="text-xs text-[var(--text-secondary)]">{l.quietRisk}</p>
                 </div>
 
@@ -353,7 +353,7 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
                   </div>
                 ) : (
                   <div>
-                    <p className="text-[10px] text-[var(--text-muted)] uppercase mb-0.5">Avoid Warning</p>
+                    <p className="text-[11px] text-[var(--text-muted)] uppercase mb-0.5">Avoid Warning</p>
                     <p className="text-xs text-[var(--text-muted)]">{l.avoidWarning}</p>
                   </div>
                 )}
@@ -366,7 +366,7 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
       </div>
 
       {/* Pick My Base Tool */}
-      <div className="card p-5 border-l-4 border-l-[var(--accent)]">
+      <div className="tool-card p-5">
         <h3 className="text-lg font-bold text-[var(--text)] mb-1 flex items-center gap-2">
           <Star size={20} className="text-[var(--accent)]" />
           Pick My Base
@@ -463,7 +463,7 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
 
         {/* Recommendations */}
         {showResults && recommendations.length > 0 && (
-          <div className="mt-6 space-y-4">
+          <div className="mt-6 space-y-4 animate-fade-slide-down">
             <h4 className="text-sm font-semibold text-[var(--text)] uppercase tracking-wide">
               Top Recommendations
             </h4>
@@ -503,11 +503,11 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="text-[10px] text-[var(--text-muted)]">Friction:</span>
+                    <span className="text-[11px] text-[var(--text-muted)]">Friction:</span>
                     {frictionBadge(l.frictionScore)}
-                    <span className="text-[10px] text-[var(--text-muted)] ml-1">Finish:</span>
+                    <span className="text-[11px] text-[var(--text-muted)] ml-1">Finish:</span>
                     {frictionBadge(l.finishScore)}
-                    <span className="text-[10px] text-[var(--text-muted)] ml-1">Mobility:</span>
+                    <span className="text-[11px] text-[var(--text-muted)] ml-1">Mobility:</span>
                     {frictionBadge(l.mobilityScore)}
                   </div>
 

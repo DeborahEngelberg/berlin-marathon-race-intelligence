@@ -130,7 +130,7 @@ export default function FailureModes({ filters }: { filters: FilterState }) {
 
               {/* Expanded Content */}
               {isExpanded && (
-                <div className="px-4 pb-4 space-y-3">
+                <div className="px-4 pb-4 space-y-3 animate-fade-slide-down">
                   {/* Why it happens */}
                   <div className="rounded-lg bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 p-3">
                     <p className="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wide mb-1">

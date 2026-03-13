@@ -50,7 +50,7 @@ export default function FiltersDrawer({ filters, onChange }: Props) {
       {open && (
         <div className="fixed inset-0 z-50 flex justify-end">
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="relative w-80 max-w-full h-full bg-[var(--bg-card)] border-l border-[var(--border)] shadow-2xl overflow-y-auto">
+          <div className="relative w-80 max-w-full h-full bg-[var(--bg-card)] border-l border-[var(--border)] shadow-2xl overflow-y-auto animate-slide-in-right">
             <div className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)] p-4 flex items-center justify-between">
               <h3 className="font-semibold text-[var(--text)]">Filters</h3>
               <div className="flex gap-2">

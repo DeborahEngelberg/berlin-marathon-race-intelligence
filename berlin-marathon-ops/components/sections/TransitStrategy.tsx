@@ -115,7 +115,7 @@ export default function TransitStrategy({ filters }: { filters: FilterState }) {
               </span>
             </button>
             {isExpanded && (
-              <div className="mt-2 ml-2">
+              <div className="mt-2 ml-2 animate-fade-slide-down">
                 {sectionBullets.length > 0 ? (
                   sectionBullets.map((b) => <BulletCard key={b.id} bullet={b} />)
                 ) : (

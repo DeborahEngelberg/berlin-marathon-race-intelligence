@@ -276,14 +276,17 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
       ) : (
         <div className="card p-8 text-center">
           <Map size={32} className="mx-auto mb-3 text-[var(--text-muted)]" />
-          <p className="text-sm text-[var(--text-secondary)] mb-2">
-            No routes match your current filters.
+          <p className="text-sm font-medium text-[var(--text)] mb-1">
+            No routes match these filters
+          </p>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            Try removing the pace band or feasibility filter to see more options.
           </p>
           <button
             onClick={resetFilters}
             className="text-sm text-[var(--accent)] hover:underline"
           >
-            Reset filters to see all routes
+            Reset all filters
           </button>
         </div>
       )}

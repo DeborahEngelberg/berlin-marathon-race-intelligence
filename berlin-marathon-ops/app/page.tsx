@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { Sun, Moon, Menu, X, Home, User, Eye, MapPin, GitBranch, Flag, Train as TrainIcon, Bed, Utensils, AlertTriangle, Heart } from 'lucide-react';
 import { getTheme, setTheme as persistTheme, trackEvent } from '@/lib/store';
 import { FilterState } from '@/lib/types';
@@ -20,18 +20,38 @@ import FoodRestaurants from '@/components/sections/FoodRestaurants';
 import FailureModes from '@/components/sections/FailureModes';
 import Support from '@/components/sections/Support';
 
-const TABS = [
-  { id: 'overview', label: 'Overview', shortLabel: 'Overview', icon: Home },
-  { id: 'runner-guide', label: 'Runner Guide', shortLabel: 'Runner', icon: User },
-  { id: 'spectator-guide', label: 'Spectator Guide', shortLabel: 'Spectator', icon: Eye },
-  { id: 'viewing-routes', label: 'Viewing Routes', shortLabel: 'Routes', icon: MapPin },
-  { id: 'crossing-map', label: 'Crossing Map', shortLabel: 'Crossings', icon: GitBranch },
-  { id: 'finish-strategy', label: 'Finish Strategy', shortLabel: 'Finish', icon: Flag },
-  { id: 'transit', label: 'Transit', shortLabel: 'Transit', icon: TrainIcon },
-  { id: 'where-to-stay', label: 'Where to Stay', shortLabel: 'Lodging', icon: Bed },
-  { id: 'food', label: 'Food', shortLabel: 'Food', icon: Utensils },
-  { id: 'common-mistakes', label: 'Common Mistakes', shortLabel: 'Mistakes', icon: AlertTriangle },
-  { id: 'support', label: 'Support', shortLabel: 'Support', icon: Heart },
+const NAV_GROUPS = [
+  {
+    label: 'Plan',
+    items: [
+      { id: 'overview', label: 'Overview', shortLabel: 'Overview', icon: Home },
+      { id: 'runner-guide', label: 'Runner Guide', shortLabel: 'Runner', icon: User },
+      { id: 'spectator-guide', label: 'Spectator Guide', shortLabel: 'Spectator', icon: Eye },
+    ],
+  },
+  {
+    label: 'Navigate',
+    items: [
+      { id: 'viewing-routes', label: 'Viewing Routes', shortLabel: 'Routes', icon: MapPin },
+      { id: 'crossing-map', label: 'Crossing Map', shortLabel: 'Crossings', icon: GitBranch },
+      { id: 'transit', label: 'Transit', shortLabel: 'Transit', icon: TrainIcon },
+    ],
+  },
+  {
+    label: 'Logistics',
+    items: [
+      { id: 'finish-strategy', label: 'Finish Strategy', shortLabel: 'Finish', icon: Flag },
+      { id: 'where-to-stay', label: 'Where to Stay', shortLabel: 'Stay', icon: Bed },
+      { id: 'food', label: 'Food', shortLabel: 'Food', icon: Utensils },
+    ],
+  },
+  {
+    label: 'Reference',
+    items: [
+      { id: 'common-mistakes', label: 'Common Mistakes', shortLabel: 'Mistakes', icon: AlertTriangle },
+      { id: 'support', label: 'Support', shortLabel: 'Support', icon: Heart },
+    ],
+  },
 ];
 
 const defaultFilters: FilterState = {
@@ -110,6 +130,9 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--bg-card)]">
+        {/* Berlin brand stripe */}
+        <div className="berlin-stripe" />
+
         <div className="max-w-7xl mx-auto px-4">
           {/* Top bar */}
           <div className="flex items-center justify-between h-14">
@@ -122,8 +145,8 @@ export default function HomePage() {
               </button>
               <button onClick={() => navigateToTab('overview')} className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
                 <div className="flex flex-col leading-none">
-                  <span className="text-xs font-extrabold tracking-wide text-[var(--accent)] uppercase">Berlin Marathon</span>
-                  <span className="text-[10px] font-medium text-[var(--text-muted)] tracking-wider uppercase">Race Intelligence</span>
+                  <span className="text-xs font-extrabold tracking-wide text-[var(--accent)] uppercase heading-display">Berlin Marathon</span>
+                  <span className="text-[11px] font-medium text-[var(--text-muted)] tracking-wider uppercase">Race Intelligence</span>
                 </div>
               </button>
             </div>
@@ -150,70 +173,91 @@ export default function HomePage() {
             <GlobalSearch onNavigate={navigateToTab} />
           </div>
 
-          {/* Tab navigation - Desktop */}
-          <nav className="hidden lg:flex overflow-x-auto -mb-px">
-            {TABS.map(tab => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => navigateToTab(tab.id)}
-                  className={`px-3 py-2.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 flex items-center gap-1.5 ${
-                    activeTab === tab.id
-                      ? 'border-[var(--accent)] text-[var(--accent)]'
-                      : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text)] hover:border-[var(--border)]'
-                  }`}
-                >
-                  <Icon size={13} />
-                  {tab.label}
-                </button>
-              );
-            })}
+          {/* Desktop nav — grouped with separators */}
+          <nav className="hidden lg:flex items-center -mb-px">
+            {NAV_GROUPS.map((group, gi) => (
+              <Fragment key={group.label}>
+                {gi > 0 && <div className="w-px h-5 bg-[var(--border)] mx-1.5 flex-shrink-0" />}
+                <div className="flex items-center">
+                  {group.items.map(tab => {
+                    const Icon = tab.icon;
+                    return (
+                      <button
+                        key={tab.id}
+                        onClick={() => navigateToTab(tab.id)}
+                        className={`px-3 py-2.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 flex items-center gap-1.5 ${
+                          activeTab === tab.id
+                            ? 'border-[var(--accent)] text-[var(--accent)]'
+                            : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text)] hover:border-[var(--border)]'
+                        }`}
+                      >
+                        <Icon size={13} />
+                        {tab.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </Fragment>
+            ))}
           </nav>
 
-          {/* Tablet tabs */}
-          <nav className="hidden md:flex lg:hidden overflow-x-auto -mb-px">
-            {TABS.map(tab => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => navigateToTab(tab.id)}
-                  className={`px-2 py-2.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 flex items-center gap-1 ${
-                    activeTab === tab.id
-                      ? 'border-[var(--accent)] text-[var(--accent)]'
-                      : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text)]'
-                  }`}
-                >
-                  <Icon size={12} />
-                  {tab.shortLabel}
-                </button>
-              );
-            })}
+          {/* Tablet nav — grouped, short labels */}
+          <nav className="hidden md:flex lg:hidden items-center -mb-px overflow-x-auto">
+            {NAV_GROUPS.map((group, gi) => (
+              <Fragment key={group.label}>
+                {gi > 0 && <div className="w-px h-4 bg-[var(--border)] mx-1 flex-shrink-0" />}
+                <div className="flex items-center">
+                  {group.items.map(tab => {
+                    const Icon = tab.icon;
+                    return (
+                      <button
+                        key={tab.id}
+                        onClick={() => navigateToTab(tab.id)}
+                        className={`px-2 py-2.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 flex items-center gap-1 ${
+                          activeTab === tab.id
+                            ? 'border-[var(--accent)] text-[var(--accent)]'
+                            : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text)]'
+                        }`}
+                      >
+                        <Icon size={12} />
+                        {tab.shortLabel}
+                      </button>
+                    );
+                  })}
+                </div>
+              </Fragment>
+            ))}
           </nav>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu — grouped with section headers */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-[var(--border)] bg-[var(--bg-card)]">
-            <nav className="max-w-7xl mx-auto px-4 py-2 space-y-0.5">
-              {TABS.map(tab => {
-                const Icon = tab.icon;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => navigateToTab(tab.id)}
-                    className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center gap-2.5 ${
-                      activeTab === tab.id
-                        ? 'bg-blue-50 dark:bg-blue-900/20 text-[var(--accent)] font-medium'
-                        : 'text-[var(--text-secondary)] hover:bg-[var(--bg-elevated)] hover:text-[var(--text)]'
-                    }`}
-                  >
-                    <Icon size={16} />
-                    {tab.label}
-                  </button>
-                );
-              })}
+          <div className="lg:hidden border-t border-[var(--border)] bg-[var(--bg-card)] animate-fade-slide-down">
+            <nav className="max-w-7xl mx-auto px-4 py-2">
+              {NAV_GROUPS.map(group => (
+                <div key={group.label}>
+                  <p className="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-semibold px-3 pt-3 pb-1">
+                    {group.label}
+                  </p>
+                  {group.items.map(tab => {
+                    const Icon = tab.icon;
+                    return (
+                      <button
+                        key={tab.id}
+                        onClick={() => navigateToTab(tab.id)}
+                        className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center gap-2.5 ${
+                          activeTab === tab.id
+                            ? 'bg-blue-50 dark:bg-blue-900/20 text-[var(--accent)] font-medium'
+                            : 'text-[var(--text-secondary)] hover:bg-[var(--bg-elevated)] hover:text-[var(--text)]'
+                        }`}
+                      >
+                        <Icon size={16} />
+                        {tab.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
             </nav>
           </div>
         )}
@@ -226,6 +270,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-[var(--border)] mt-8">
+        <div className="berlin-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
             <p>

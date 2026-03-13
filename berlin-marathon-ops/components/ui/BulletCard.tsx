@@ -56,15 +56,19 @@ export default function BulletCard({ bullet }: { bullet: Bullet }) {
         </span>
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap gap-1.5 mb-1.5">
-            <span className={`badge ${audienceClass}`}>{bullet.audience}</span>
             <span className={`badge ${confidenceClass}`}>{bullet.confidence}</span>
             <span className="badge bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">{bullet.label}</span>
-            {bullet.languageOrigin === 'DE' && <span className="badge badge-de">DE</span>}
             {bullet.timeText && <span className="badge badge-time"><Clock size={10} className="mr-1" />{bullet.timeText}</span>}
-            {bullet.recurrenceCount && bullet.recurrenceCount > 3 && (
-              <span className="badge bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
-                ×{bullet.recurrenceCount} reported
-              </span>
+            {expanded && (
+              <>
+                <span className={`badge ${audienceClass}`}>{bullet.audience}</span>
+                {bullet.languageOrigin === 'DE' && <span className="badge badge-de">DE</span>}
+                {bullet.recurrenceCount && bullet.recurrenceCount > 3 && (
+                  <span className="badge bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
+                    ×{bullet.recurrenceCount} reported
+                  </span>
+                )}
+              </>
             )}
           </div>
           <p className={`text-sm ${expanded ? '' : 'line-clamp-2'} text-[var(--text)]`}>
@@ -90,7 +94,7 @@ export default function BulletCard({ bullet }: { bullet: Bullet }) {
       </button>
 
       {expanded && (
-        <div className="px-4 pb-4 pt-0 ml-8 border-t border-[var(--border)]">
+        <div className="px-4 pb-4 pt-0 ml-8 border-t border-[var(--border)] animate-fade-slide-down">
           <div className="pt-3 space-y-2">
             {bullet.tags.length > 0 && (
               <div className="flex flex-wrap gap-1">
