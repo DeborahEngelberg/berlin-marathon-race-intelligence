@@ -56,7 +56,7 @@ const DO_NOT_LIST = [
 
 export default function TransitStrategy({ filters }: { filters: FilterState }) {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
-    new Set(['u-bahn-reliability', 's-bahn-reliability'])
+    new Set(SUBSECTIONS.map(s => s.id))
   );
 
   const bullets = useMemo(() => {
@@ -89,8 +89,8 @@ export default function TransitStrategy({ filters }: { filters: FilterState }) {
     <div>
       {/* Section Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Transit Strategy</h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2">Transit Strategy</h2>
+        <p className="text-base text-[var(--text-secondary)]">
           U-Bahn vs S-Bahn, what works, what fails, and when walking wins
         </p>
       </div>

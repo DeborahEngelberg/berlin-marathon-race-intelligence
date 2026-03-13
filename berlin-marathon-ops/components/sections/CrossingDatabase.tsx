@@ -112,11 +112,11 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
     <div>
       {/* Section Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <GitBranch size={24} className="text-[var(--accent)]" />
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
+          <GitBranch size={28} className="text-[var(--accent-gold)]" />
           Crossing Database
         </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <p className="text-base text-[var(--text-secondary)]">
           Berlin spectator superpower — how to cross the marathon course
         </p>
         <p className="text-xs text-[var(--text-muted)] mt-1">

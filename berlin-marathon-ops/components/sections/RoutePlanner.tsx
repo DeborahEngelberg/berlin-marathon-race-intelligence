@@ -94,11 +94,11 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
     <div>
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Map size={24} className="text-[var(--accent)]" />
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
+          <Map size={28} className="text-[var(--accent-gold)]" />
           Route Planner
         </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <p className="text-base text-[var(--text-secondary)]">
           Pre-planned spectator routes with transit directions, viewing spots, and backup plans.
           Each route respects the Three-View Rule.
         </p>
@@ -243,10 +243,10 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
       )}
 
       {/* Results count */}
-      <div className="mb-4 text-sm text-[var(--text-muted)]">
+      <p className="text-xs text-[var(--text-muted)] mb-3">
         Showing {filteredRoutes.length} of {allRoutes.length} routes
         {hasActiveFilters && ' (filtered)'}
-      </div>
+      </p>
 
       {/* Route list */}
       {filteredRoutes.length > 0 ? (

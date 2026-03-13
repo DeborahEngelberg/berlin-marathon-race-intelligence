@@ -128,7 +128,7 @@ function ChecklistGenerator() {
 }
 
 export default function RunnerIntelligence({ filters }: Props) {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['start-line-logistics', 'toilet-strategy']));
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(SUBSECTIONS.map(s => s.id)));
 
   const bullets = useMemo(() => {
     let filtered = (bulletsData as Bullet[]).filter(b => b.section === 'runner-intelligence');
@@ -161,37 +161,44 @@ export default function RunnerIntelligence({ filters }: Props) {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Clock size={24} className="text-[var(--accent)]" />
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
+          <Clock size={28} className="text-[var(--accent-gold)]" />
           Runner Guide
         </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <p className="text-base text-[var(--text-secondary)]">
           Everything you need to know about race morning, course execution, and what veterans wish they&apos;d known.
         </p>
       </div>
 
       <ChecklistGenerator />
 
-      {SUBSECTIONS.map(sub => {
+      {SUBSECTIONS.map((sub, idx) => {
         const sectionBullets = bullets.filter(b => b.subsection === sub.id || b.tags.includes(sub.id));
-        const isExpanded = expandedSections.has(sub.id);
+        const isExpanded = idx === 0 || expandedSections.has(sub.id);
 
         return (
-          <div key={sub.id} className="mb-4">
-            <button
-              onClick={() => toggleSection(sub.id)}
-              className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"
-            >
-              {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-              <span className="font-semibold text-sm text-[var(--text)]">{sub.label}</span>
-              <span className="ml-auto text-xs text-[var(--text-muted)]">{sectionBullets.length} items</span>
-            </button>
+          <div key={sub.id} className="mb-6">
+            {idx === 0 ? (
+              <div className="flex items-center gap-2 mb-3">
+                <div className="h-1 w-4 bg-[var(--accent-gold)] rounded-full" />
+                <h3 className="font-bold text-base text-[var(--text)]">{sub.label}</h3>
+              </div>
+            ) : (
+              <button
+                onClick={() => toggleSection(sub.id)}
+                className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"
+              >
+                {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                <span className="font-semibold text-base text-[var(--text)]">{sub.label}</span>
+                <span className="ml-auto text-xs text-[var(--text-muted)]">{sectionBullets.length} items</span>
+              </button>
+            )}
             {isExpanded && (
-              <div className="mt-2 ml-2 animate-fade-slide-down">
+              <div className={idx === 0 ? 'space-y-2' : 'mt-2 ml-2 animate-fade-slide-down'}>
                 {sectionBullets.length > 0 ? (
                   sectionBullets.map(b => <BulletCard key={b.id} bullet={b} />)
                 ) : (
-                  <p className="text-sm text-[var(--text-muted)] py-4 px-4">No items match current filters for this subsection.</p>
+                  <p className="text-base text-[var(--text-muted)] py-4 px-4">No items match current filters for this subsection.</p>
                 )}
               </div>
             )}

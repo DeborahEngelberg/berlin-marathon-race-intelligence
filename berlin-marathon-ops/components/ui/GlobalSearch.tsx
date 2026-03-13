@@ -95,7 +95,7 @@ export default function GlobalSearch({ onNavigate }: Props) {
       </div>
 
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full mt-1 w-full bg-[var(--bg-card)] border border-[var(--border)] rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
+        <div className="absolute top-full mt-1 w-full bg-[var(--bg-card)] border border-[var(--border)] rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
           {results.map((r) => (
             <button
               key={`${r.type}-${r.id}`}
@@ -123,7 +123,7 @@ export default function GlobalSearch({ onNavigate }: Props) {
       )}
 
       {isOpen && query.length >= 2 && results.length === 0 && (
-        <div className="absolute top-full mt-1 w-full bg-[var(--bg-card)] border border-[var(--border)] rounded-lg shadow-xl z-50 p-4 text-center text-sm text-[var(--text-muted)]">
+        <div className="absolute top-full mt-1 w-full bg-[var(--bg-card)] border border-[var(--border)] rounded-lg shadow-lg z-50 p-4 text-center text-sm text-[var(--text-muted)]">
           No results found for &quot;{query}&quot;
         </div>
       )}

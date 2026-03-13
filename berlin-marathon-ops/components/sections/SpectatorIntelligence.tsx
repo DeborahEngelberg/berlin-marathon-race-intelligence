@@ -19,7 +19,7 @@ interface Props {
 }
 
 export default function SpectatorIntelligence({ filters }: Props) {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['best-viewing-zones', 'trap-zones']));
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(SUBSECTIONS.map(s => s.id)));
 
   const bullets = useMemo(() => {
     let filtered = (bulletsData as Bullet[]).filter(b =>
@@ -44,11 +44,11 @@ export default function SpectatorIntelligence({ filters }: Props) {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Eye size={24} className="text-[var(--accent)]" />
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
+          <Eye size={28} className="text-[var(--accent)]" />
           Spectator Guide
         </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <p className="text-base text-[var(--text-secondary)]">
           Tactical viewing strategies, wrong-side traps, and the Three-View Rule.
         </p>
       </div>
@@ -67,18 +67,21 @@ export default function SpectatorIntelligence({ filters }: Props) {
         <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">
           Attempting more than 3 viewing positions consistently fails. Transit disruptions, course crossing delays, and crowd density make a 4th move nearly impossible for runners slower than 3:15.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800">
-            <div className="text-green-700 dark:text-green-400 text-sm font-bold mb-1">2 Spots</div>
-            <p className="text-xs text-green-600 dark:text-green-300 leading-relaxed">Maximum comfort. Best for 4:15+ runners. Near-guaranteed success.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="p-5 rounded-xl bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 text-center">
+            <div className="text-5xl font-extrabold text-green-700 dark:text-green-400 mb-1">2</div>
+            <div className="text-sm font-bold text-green-700 dark:text-green-400 mb-2">Spots</div>
+            <p className="text-sm text-green-600 dark:text-green-300 leading-relaxed">Maximum comfort. Best for 4:15+ runners. Near-guaranteed success.</p>
           </div>
-          <div className="p-4 rounded-xl bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800">
-            <div className="text-yellow-700 dark:text-yellow-400 text-sm font-bold mb-1">3 Spots</div>
-            <p className="text-xs text-yellow-600 dark:text-yellow-300 leading-relaxed">Optimal. Budget 30-40 min transit between spots. Requires U-Bahn planning.</p>
+          <div className="p-5 rounded-xl bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800 text-center">
+            <div className="text-5xl font-extrabold text-yellow-700 dark:text-yellow-400 mb-1">3</div>
+            <div className="text-sm font-bold text-yellow-700 dark:text-yellow-400 mb-2">Spots</div>
+            <p className="text-sm text-yellow-600 dark:text-yellow-300 leading-relaxed">Optimal. Budget 30-40 min transit between spots. Requires U-Bahn planning.</p>
           </div>
-          <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800">
-            <div className="text-red-700 dark:text-red-400 text-sm font-bold mb-1">4+ Spots</div>
-            <p className="text-xs text-red-600 dark:text-red-300 leading-relaxed">Failure-prone. Zero margin for error. Usually results in missing the runner at 1+ spots.</p>
+          <div className="p-5 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 text-center">
+            <div className="text-5xl font-extrabold text-red-700 dark:text-red-400 mb-1">4+</div>
+            <div className="text-sm font-bold text-red-700 dark:text-red-400 mb-2">Spots</div>
+            <p className="text-sm text-red-600 dark:text-red-300 leading-relaxed">Failure-prone. Zero margin. Usually results in missing the runner at 1+ spots.</p>
           </div>
         </div>
       </div>
@@ -103,28 +106,35 @@ export default function SpectatorIntelligence({ filters }: Props) {
         </div>
       </div>
 
-      {SUBSECTIONS.map(sub => {
+      {SUBSECTIONS.map((sub, idx) => {
         const sectionBullets = bullets.filter(b =>
           b.subsection === sub.id || b.tags.includes(sub.id)
         );
-        const isExpanded = expandedSections.has(sub.id);
+        const isExpanded = idx === 0 || expandedSections.has(sub.id);
 
         return (
-          <div key={sub.id} className="mb-4">
-            <button
-              onClick={() => toggleSection(sub.id)}
-              className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"
-            >
-              {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-              <span className="font-semibold text-sm text-[var(--text)]">{sub.label}</span>
-              <span className="ml-auto text-xs text-[var(--text-muted)]">{sectionBullets.length} items</span>
-            </button>
+          <div key={sub.id} className="mb-6">
+            {idx === 0 ? (
+              <div className="flex items-center gap-2 mb-3">
+                <div className="h-1 w-4 bg-[var(--accent-gold)] rounded-full" />
+                <h3 className="font-bold text-base text-[var(--text)]">{sub.label}</h3>
+              </div>
+            ) : (
+              <button
+                onClick={() => toggleSection(sub.id)}
+                className="w-full text-left flex items-center gap-2 py-3 px-4 rounded-lg bg-[var(--bg-elevated)] hover:bg-[var(--border)] transition-colors"
+              >
+                {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                <span className="font-semibold text-base text-[var(--text)]">{sub.label}</span>
+                <span className="ml-auto text-xs text-[var(--text-muted)]">{sectionBullets.length} items</span>
+              </button>
+            )}
             {isExpanded && (
-              <div className="mt-2 ml-2 animate-fade-slide-down">
+              <div className={idx === 0 ? 'space-y-2' : 'mt-2 ml-2 animate-fade-slide-down'}>
                 {sectionBullets.length > 0 ? (
                   sectionBullets.map(b => <BulletCard key={b.id} bullet={b} />)
                 ) : (
-                  <p className="text-sm text-[var(--text-muted)] py-4 px-4">No items match current filters.</p>
+                  <p className="text-base text-[var(--text-muted)] py-4 px-4">No items match current filters.</p>
                 )}
               </div>
             )}

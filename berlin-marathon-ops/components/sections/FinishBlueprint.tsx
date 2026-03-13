@@ -177,11 +177,11 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
     <div>
       {/* Section Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Flag size={24} className="text-[var(--accent)]" />
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
+          <Flag size={28} className="text-[var(--accent-gold)]" />
           Finish Line Blueprint
         </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <p className="text-base text-[var(--text-secondary)]">
           What actually happens after you cross the line: the full post-finish sequence, real wait times, and reunion strategies that work.
         </p>
       </div>

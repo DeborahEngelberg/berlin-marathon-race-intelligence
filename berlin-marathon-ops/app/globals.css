@@ -25,7 +25,6 @@
   --tool-bg: #EFF4FB;
   --tool-border: #B8D0F0;
 
-  /* Animation easing curves */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -42,9 +41,7 @@
   --tool-border: #253048;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   background-color: var(--bg);
@@ -53,31 +50,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Display headings use Syne (geometric, Bauhaus-adjacent) */
 h1, h2, h3, .heading-display {
   font-family: 'Syne', system-ui, sans-serif;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-elevated);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
-}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-elevated); }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
 
-/* Badge styles */
-.badge {
-  @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
-}
+/* Badges */
+.badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium; }
 .badge-high { @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400; }
 .badge-med { @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400; }
 .badge-low { @apply bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400; }
@@ -89,159 +72,104 @@ h1, h2, h3, .heading-display {
 .badge-de { @apply bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400; }
 .badge-time { @apply bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-400; }
 
-/* Card base — hover lift */
+/* Card — static, no lift on hover */
 .card {
   @apply rounded-lg border;
   background: var(--bg-card);
   border-color: var(--border);
-  transition: transform 0.2s var(--ease-out-quart), box-shadow 0.2s var(--ease-out-quart), border-color 0.2s var(--ease-out-quart);
+  transition: border-color 0.2s var(--ease-out-quart);
 }
 .card:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
 }
 
-/* Tool cards — distinct treatment for interactive tools/wizards */
+/* Tool cards — gold border, interactive lift */
 .tool-card {
   @apply rounded-xl border-2;
   background: var(--tool-bg);
-  border-color: var(--tool-border);
-  transition: transform 0.2s var(--ease-out-quart), box-shadow 0.2s var(--ease-out-quart), border-color 0.2s var(--ease-out-quart);
+  border-color: var(--accent-gold);
+  transition: transform 0.2s var(--ease-out-quart), box-shadow 0.2s var(--ease-out-quart);
 }
 .tool-card:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Stopwatch callout */
 .stopwatch-callout {
   @apply flex items-start gap-3 p-4 rounded-lg border-l-4 border-l-cyan-500;
   background: var(--bg-elevated);
 }
 
-/* Tab styling */
 .tab-active {
   @apply border-b-2 font-semibold;
-  border-color: var(--accent);
+  border-color: var(--accent-gold);
   color: var(--accent);
 }
 
-/* Leaflet container fix */
-.leaflet-container {
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5rem;
-}
+.leaflet-container { height: 100%; width: 100%; border-radius: 0.5rem; }
 
-/* ═══════════════════════════════════════════════
-   Berlin Marathon Brand Stripe — animated shimmer
-   ═══════════════════════════════════════════════ */
+/* Berlin stripe */
 @keyframes stripeShimmer {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
-
 .berlin-stripe {
-  background: linear-gradient(
-    90deg,
-    var(--accent) 0%, var(--accent) 28%,
-    var(--accent-light) 31%,
-    var(--accent-red) 34%, var(--accent-red) 62%,
-    #F44  65%,
-    var(--accent-gold) 68%, var(--accent-gold) 96%,
-    var(--accent-gold-light) 100%
+  background: linear-gradient(90deg,
+    var(--accent) 0%, var(--accent) 28%, var(--accent-light) 31%,
+    var(--accent-red) 34%, var(--accent-red) 62%, #F44 65%,
+    var(--accent-gold) 68%, var(--accent-gold) 96%, var(--accent-gold-light) 100%
   );
   background-size: 200% 100%;
   height: 3px;
   animation: stripeShimmer 6s linear infinite;
 }
 
-/* ═══════════════════════════════════════════════
-   Hero Entrance Choreography
-   ═══════════════════════════════════════════════ */
+/* Hero entrance */
 @keyframes heroSlideUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes heroScale {
   from { opacity: 0; transform: scale(0.92) translateY(8px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
-
 .hero-stagger-1 { animation: heroSlideUp 0.6s var(--ease-out-expo) 0.05s both; }
-.hero-stagger-2 { animation: heroSlideUp 0.6s var(--ease-out-expo) 0.15s both; }
+.hero-stagger-2 { animation: heroSlideUp 0.7s var(--ease-out-expo) 0.12s both; }
 .hero-stagger-3 { animation: heroSlideUp 0.6s var(--ease-out-expo) 0.28s both; }
-.hero-stagger-4 { animation: heroSlideUp 0.6s var(--ease-out-expo) 0.4s both; }
-.hero-stagger-5 { animation: heroScale 0.5s var(--ease-out-expo) 0.55s both; }
+.hero-stagger-4 { animation: heroScale 0.5s var(--ease-out-expo) 0.45s both; }
 
-/* ═══════════════════════════════════════════════
-   Scroll-Triggered Reveal (used by AnimateIn)
-   ═══════════════════════════════════════════════ */
+/* Scroll reveals */
 .scroll-reveal {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 0; transform: translateY(20px);
   transition: opacity 0.55s var(--ease-out-expo), transform 0.55s var(--ease-out-expo);
 }
-.scroll-reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.scroll-reveal-visible { opacity: 1; transform: translateY(0); }
 
-/* ═══════════════════════════════════════════════
-   Button Press Feedback
-   ═══════════════════════════════════════════════ */
-.btn-press {
-  transition: transform 0.12s var(--ease-out-quart), box-shadow 0.15s var(--ease-out-quart);
-}
-.btn-press:hover {
-  transform: translateY(-1px);
-}
-.btn-press:active {
-  transform: translateY(0) scale(0.96);
-}
+/* Button press */
+.btn-press { transition: transform 0.12s var(--ease-out-quart), box-shadow 0.15s var(--ease-out-quart); }
+.btn-press:hover { transform: translateY(-1px); }
+.btn-press:active { transform: translateY(0) scale(0.96); }
 
-/* ═══════════════════════════════════════════════
-   Bookmark Button Pulse
-   ═══════════════════════════════════════════════ */
+/* Bookmark pulse */
 @keyframes bookmarkPop {
   0% { transform: scale(1); }
   40% { transform: scale(1.35); }
   100% { transform: scale(1); }
 }
+.bookmark-btn { transition: transform 0.12s var(--ease-out-quart); }
+.bookmark-btn:active svg { animation: bookmarkPop 0.3s var(--ease-out-quart); }
 
-.bookmark-btn {
-  transition: transform 0.12s var(--ease-out-quart);
-}
-.bookmark-btn:active svg {
-  animation: bookmarkPop 0.3s var(--ease-out-quart);
-}
+/* Filter pills */
+.pill-interactive { transition: transform 0.12s var(--ease-out-quart); }
+.pill-interactive:hover { transform: scale(1.06); }
+.pill-interactive:active { transform: scale(0.94); }
 
-/* ═══════════════════════════════════════════════
-   Filter Pill Interactions
-   ═══════════════════════════════════════════════ */
-.pill-interactive {
-  transition: transform 0.12s var(--ease-out-quart), box-shadow 0.12s var(--ease-out-quart);
-}
-.pill-interactive:hover {
-  transform: scale(1.06);
-}
-.pill-interactive:active {
-  transform: scale(0.94);
-}
-
-/* ═══════════════════════════════════════════════
-   Timeline Stagger (Checklist Generator)
-   ═══════════════════════════════════════════════ */
+/* Timeline stagger */
 @keyframes timelineReveal {
   from { opacity: 0; transform: translateX(-16px); }
   to { opacity: 1; transform: translateX(0); }
 }
-
-.timeline-step {
-  animation: timelineReveal 0.4s var(--ease-out-expo) both;
-}
+.timeline-step { animation: timelineReveal 0.4s var(--ease-out-expo) both; }
 .timeline-step:nth-child(1) { animation-delay: 0ms; }
 .timeline-step:nth-child(2) { animation-delay: 80ms; }
 .timeline-step:nth-child(3) { animation-delay: 120ms; }
@@ -250,39 +178,25 @@ h1, h2, h3, .heading-display {
 .timeline-step:nth-child(6) { animation-delay: 360ms; }
 .timeline-step:nth-child(7) { animation-delay: 440ms; }
 
-/* ═══════════════════════════════════════════════
-   Existing UI Animations (updated with easing)
-   ═══════════════════════════════════════════════ */
+/* UI animations */
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.animate-fade-slide-down { animation: fadeSlideDown 0.2s var(--ease-out-expo); }
+.animate-fade-in { animation: fadeIn 0.15s var(--ease-out-quart); }
+.animate-slide-in-right { animation: slideInRight 0.25s var(--ease-out-expo); }
+
+/* Gold section divider */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold) 0%, transparent 100%);
 }
 
-@keyframes slideInRight {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
-}
-
-.animate-fade-slide-down {
-  animation: fadeSlideDown 0.2s var(--ease-out-expo);
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.15s var(--ease-out-quart);
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.25s var(--ease-out-expo);
-}
-
-/* ═══════════════════════════════════════════════
-   Accessibility: Reduced Motion
-   ═══════════════════════════════════════════════ */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -290,18 +204,7 @@ h1, h2, h3, .heading-display {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  .scroll-reveal {
-    opacity: 1;
-    transform: none;
-  }
-
-  .berlin-stripe {
-    animation: none;
-  }
-
-  .card:hover,
-  .tool-card:hover {
-    transform: none;
-  }
+  .scroll-reveal { opacity: 1; transform: none; }
+  .berlin-stripe { animation: none; }
+  .tool-card:hover { transform: none; }
 }

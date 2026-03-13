@@ -71,7 +71,7 @@ export default function BulletCard({ bullet }: { bullet: Bullet }) {
               </>
             )}
           </div>
-          <p className={`text-sm ${expanded ? '' : 'line-clamp-2'} text-[var(--text)]`}>
+          <p className="text-base text-[var(--text)] leading-relaxed">
             {bullet.text}
           </p>
         </div>

@@ -16,144 +16,107 @@ const NAV_CARDS = [
 ];
 
 const TIPS = [
-  {
-    title: 'The Three-View Rule',
-    text: 'Attempting more than 3 viewing positions consistently fails. Transit disruptions, course crossing delays, and crowd density make a 4th move nearly impossible.',
-    audience: 'Spectator',
-  },
-  {
-    title: 'Use U-Bahn underpasses to cross the course',
-    text: 'The Straßenunterführungen der U-Bahnhöfe (U-Bahn station underpasses) allow you to pass beneath the race course at key locations like Potsdamer Platz.',
-    audience: 'Spectator',
-  },
-  {
-    title: 'Arrive at Athletes\' Village by 07:30',
-    text: 'Late arrival (after 08:30) triggers a cascade failure: security line 20+ min, toilet lines impossible, gear drop rushed. Build a 30-minute buffer.',
-    audience: 'Runner',
-  },
-  {
-    title: 'Do not rely on buses or trams',
-    text: 'All surface bus and tram routes crossing the marathon course are rerouted or suspended from approximately 07:00 to 17:00. Use U-Bahn and S-Bahn only.',
-    audience: 'Both',
-  },
-  {
-    title: 'Plan your reunion before race day',
-    text: 'Cell service near the finish is severely degraded. Without a pre-agreed meeting plan (letter sign + backup location), reunion averages 45 to 90 minutes.',
-    audience: 'Both',
-  },
-  {
-    title: 'Don\'t go out too fast',
-    text: 'Berlin\'s flat opening kilometers feel fast. 60%+ of first-timers run 15 to 30 sec/km faster than goal pace in the first 5 km. This catches up brutally at km 30 to 35.',
-    audience: 'Runner',
-  },
+  { title: 'The Three-View Rule', text: 'Attempting more than 3 viewing positions consistently fails. Transit disruptions, course crossing delays, and crowd density make a 4th move nearly impossible.', audience: 'Spectator' },
+  { title: 'Use U-Bahn underpasses to cross the course', text: 'The Straßenunterführungen der U-Bahnhöfe (U-Bahn station underpasses) allow you to pass beneath the race course at key locations like Potsdamer Platz.', audience: 'Spectator' },
+  { title: 'Arrive at Athletes\' Village by 07:30', text: 'Late arrival (after 08:30) triggers a cascade failure: security line 20+ min, toilet lines impossible, gear drop rushed. Build a 30-minute buffer.', audience: 'Runner' },
+  { title: 'Do not rely on buses or trams', text: 'All surface bus and tram routes crossing the marathon course are rerouted or suspended from approximately 07:00 to 17:00. Use U-Bahn and S-Bahn only.', audience: 'Both' },
+  { title: 'Plan your reunion before race day', text: 'Cell service near the finish is severely degraded. Without a pre-agreed meeting plan (letter sign + backup location), reunion averages 45 to 90 minutes.', audience: 'Both' },
+  { title: 'Don\'t go out too fast', text: 'Berlin\'s flat opening kilometers feel fast. 60%+ of first-timers run 15 to 30 sec/km faster than goal pace in the first 5 km. This catches up brutally at km 30 to 35.', audience: 'Runner' },
 ];
 
 export default function Overview({ onNavigate }: Props) {
   return (
     <div>
-      {/* Hero — Berlin-themed with marathon identity */}
-      <div className="mb-12">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--accent)] via-[#1555B0] to-[#0D3B7A] p-8 sm:p-10 mb-8">
-          {/* Subtle course silhouette decoration */}
-          <div className="absolute inset-0 opacity-[0.06]">
-            <svg viewBox="0 0 800 300" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-              <path d="M0,150 Q100,80 200,150 T400,120 T600,160 T800,130" fill="none" stroke="white" strokeWidth="140" strokeLinecap="round" />
-            </svg>
+      {/* Hero — typography-first, confident */}
+      <div className="pt-8 sm:pt-12 pb-12 sm:pb-16 mb-8 border-b border-[var(--border)]">
+        <div className="hero-stagger-1">
+          <div className="flex items-center gap-2 mb-6">
+            <div className="h-1 w-10 bg-[var(--accent-gold)] rounded-full" />
+            <span className="text-xs font-semibold tracking-widest uppercase text-[var(--text-muted)]">BMW Berlin-Marathon</span>
           </div>
+        </div>
 
-          <div className="relative z-10">
-            <div className="flex items-center gap-2 mb-4 hero-stagger-1">
-              <div className="h-1 w-8 bg-[var(--accent-gold)] rounded-full" />
-              <span className="text-xs font-semibold tracking-widest uppercase text-blue-200">BMW Berlin-Marathon</span>
-            </div>
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[var(--text)] leading-[0.92] tracking-tight mb-6 hero-stagger-2">
+          BERLIN<br />MARATHON<br />
+          <span className="text-[var(--accent-gold)]">RACE INTELLIGENCE</span>
+        </h1>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight hero-stagger-2">
-              Your complete guide to<br />
-              race day in Berlin
-            </h2>
-            <p className="text-base sm:text-lg text-blue-100 max-w-2xl leading-relaxed mb-8 hero-stagger-3">
-              Whether you are running the marathon or cheering from the sidelines, this guide covers logistics, strategy, and lessons from experienced runners and spectators.
-            </p>
+        <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-xl leading-relaxed mb-10 hero-stagger-3">
+          Everything you need for race day — logistics, strategy, and lessons from veterans who&apos;ve done it.
+        </p>
 
-            {/* Runner / Spectator decision — prominent CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 hero-stagger-4">
-              <button
-                onClick={() => onNavigate('runner-guide')}
-                className="btn-press px-6 py-3 rounded-xl bg-white text-[var(--accent)] font-bold text-sm hover:bg-blue-50 flex items-center justify-center gap-2 shadow-lg"
-              >
-                <User size={18} /> I&apos;m Running
-              </button>
-              <button
-                onClick={() => onNavigate('spectator-guide')}
-                className="btn-press px-6 py-3 rounded-xl border-2 border-white/40 text-white font-bold text-sm hover:bg-white/10 flex items-center justify-center gap-2"
-              >
-                <Eye size={18} /> I&apos;m Spectating
-              </button>
-            </div>
-          </div>
-
-          {/* Gold + Red accent bar at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--accent-gold)] via-[var(--accent-red)] to-[var(--accent-gold)]" />
+        <div className="flex flex-col sm:flex-row gap-3 hero-stagger-4">
+          <button
+            onClick={() => onNavigate('runner-guide')}
+            className="btn-press px-8 py-3.5 rounded-lg bg-[var(--accent-gold)] text-white font-bold text-base flex items-center justify-center gap-2.5 hover:opacity-90 transition-opacity"
+          >
+            <User size={20} /> I&apos;m Running
+          </button>
+          <button
+            onClick={() => onNavigate('spectator-guide')}
+            className="btn-press px-8 py-3.5 rounded-lg bg-[var(--accent)] text-white font-bold text-base flex items-center justify-center gap-2.5 hover:opacity-90 transition-opacity"
+          >
+            <Eye size={20} /> I&apos;m Spectating
+          </button>
         </div>
       </div>
 
-      {/* Quick Navigation Cards */}
-      <AnimateIn className="mb-10">
-        <h3 className="text-lg font-bold text-[var(--text)] mb-4">Explore the guide</h3>
+      {/* Navigation Cards */}
+      <AnimateIn className="mb-12">
+        <h3 className="text-2xl font-bold text-[var(--text)] mb-5">Explore the guide</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {NAV_CARDS.map(card => (
             <button
               key={card.id}
               onClick={() => onNavigate(card.id)}
-              className={`text-left p-4 rounded-lg border ${card.color} hover:shadow-md transition-all group`}
+              className={`text-left p-5 rounded-lg border ${card.color} hover:shadow-md transition-all group`}
             >
               <div className="flex items-start gap-3">
-                <card.icon size={20} className="text-[var(--accent)] flex-shrink-0 mt-0.5" />
+                <card.icon size={20} className="text-[var(--accent-gold)] flex-shrink-0 mt-0.5" />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-semibold text-sm text-[var(--text)]">{card.label}</span>
+                    <span className="font-semibold text-base text-[var(--text)]">{card.label}</span>
                     <ArrowRight size={14} className="text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{card.desc}</p>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{card.desc}</p>
                 </div>
               </div>
             </button>
           ))}
 
-          {/* Additional links */}
-          <button onClick={() => onNavigate('transit')} className="text-left p-4 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-md transition-all group">
+          <button onClick={() => onNavigate('transit')} className="text-left p-5 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-md transition-all group">
             <div className="flex items-start gap-3">
               <Train size={20} className="text-[var(--accent)] flex-shrink-0 mt-0.5" />
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-semibold text-sm text-[var(--text)]">Transit</span>
+                  <span className="font-semibold text-base text-[var(--text)]">Transit</span>
                   <ArrowRight size={14} className="text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <p className="text-xs text-[var(--text-secondary)]">U-Bahn and S-Bahn reliability, stations to avoid, walking alternatives</p>
+                <p className="text-sm text-[var(--text-secondary)]">U-Bahn and S-Bahn reliability, stations to avoid, walking alternatives</p>
               </div>
             </div>
           </button>
-          <button onClick={() => onNavigate('where-to-stay')} className="text-left p-4 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-md transition-all group">
+          <button onClick={() => onNavigate('where-to-stay')} className="text-left p-5 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-md transition-all group">
             <div className="flex items-start gap-3">
               <Bed size={20} className="text-[var(--accent)] flex-shrink-0 mt-0.5" />
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-semibold text-sm text-[var(--text)]">Where to Stay</span>
+                  <span className="font-semibold text-base text-[var(--text)]">Where to Stay</span>
                   <ArrowRight size={14} className="text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <p className="text-xs text-[var(--text-secondary)]">Neighborhood rankings for race-morning friction, finish access, and quiet sleep</p>
+                <p className="text-sm text-[var(--text-secondary)]">Neighborhood rankings for race-morning friction, finish access, and quiet sleep</p>
               </div>
             </div>
           </button>
-          <button onClick={() => onNavigate('food')} className="text-left p-4 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-md transition-all group">
+          <button onClick={() => onNavigate('food')} className="text-left p-5 rounded-lg border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-md transition-all group">
             <div className="flex items-start gap-3">
               <Utensils size={20} className="text-[var(--accent)] flex-shrink-0 mt-0.5" />
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-semibold text-sm text-[var(--text)]">Food</span>
+                  <span className="font-semibold text-base text-[var(--text)]">Food</span>
                   <ArrowRight size={14} className="text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <p className="text-xs text-[var(--text-secondary)]">Where to eat marathon weekend: carb-loading, breakfast, post-race</p>
+                <p className="text-sm text-[var(--text-secondary)]">Where to eat marathon weekend: carb-loading, breakfast, post-race</p>
               </div>
             </div>
           </button>
@@ -161,18 +124,18 @@ export default function Overview({ onNavigate }: Props) {
       </AnimateIn>
 
       {/* Most Important Tips */}
-      <AnimateIn className="mb-10" delay={100}>
-        <h3 className="text-lg font-bold text-[var(--text)] mb-4">Most important tips</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <AnimateIn className="mb-12" delay={100}>
+        <h3 className="text-2xl font-bold text-[var(--text)] mb-5">Most important tips</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {TIPS.map((tip, i) => (
-            <div key={i} className="card p-4">
+            <div key={i} className="card p-5">
               <div className="flex items-center gap-2 mb-2">
                 <span className={`badge ${tip.audience === 'Runner' ? 'badge-runner' : tip.audience === 'Spectator' ? 'badge-spectator' : 'badge-both'}`}>
                   {tip.audience}
                 </span>
-                <h4 className="font-semibold text-sm text-[var(--text)]">{tip.title}</h4>
+                <h4 className="font-semibold text-base text-[var(--text)]">{tip.title}</h4>
               </div>
-              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{tip.text}</p>
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{tip.text}</p>
             </div>
           ))}
         </div>
@@ -180,33 +143,31 @@ export default function Overview({ onNavigate }: Props) {
 
       {/* How to use this guide */}
       <AnimateIn delay={150}>
-      <div className="card p-6 mb-6">
-        <h3 className="text-lg font-bold text-[var(--text)] mb-3">How to use this guide</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-[var(--text-secondary)]">
-          <div>
-            <h4 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
-              <User size={16} className="text-[var(--accent)]" /> For runners
-            </h4>
-            <p className="leading-relaxed">
-              Start with the <strong>Runner Guide</strong> for race morning logistics, toilet strategy, and pacing advice. Then check <strong>Finish Strategy</strong> to plan your post-race reunion. Use the <strong>Race Morning Checklist Generator</strong> to build a personalized timeline.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
-              <Eye size={16} className="text-[var(--accent)]" /> For spectators
-            </h4>
-            <p className="leading-relaxed">
-              Start with the <strong>Spectator Guide</strong> for viewing strategy and trap zones. Then pick a <strong>Viewing Route</strong> that matches your runner&apos;s pace. Use the <strong>Crossing Map</strong> to plan how to move between viewing spots. Check <strong>Common Mistakes</strong> to avoid the biggest spectator failures.
-            </p>
+        <div className="card p-6 sm:p-8 mb-6">
+          <h3 className="text-xl font-bold text-[var(--text)] mb-4">How to use this guide</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-[var(--text-secondary)]">
+            <div>
+              <h4 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
+                <User size={16} className="text-[var(--accent-gold)]" /> For runners
+              </h4>
+              <p className="leading-relaxed">
+                Start with the <strong>Runner Guide</strong> for race morning logistics, toilet strategy, and pacing advice. Then check <strong>Finish Strategy</strong> to plan your post-race reunion. Use the <strong>Race Morning Checklist Generator</strong> to build a personalized timeline.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-[var(--text)] mb-2 flex items-center gap-2">
+                <Eye size={16} className="text-[var(--accent)]" /> For spectators
+              </h4>
+              <p className="leading-relaxed">
+                Start with the <strong>Spectator Guide</strong> for viewing strategy and trap zones. Then pick a <strong>Viewing Route</strong> that matches your runner&apos;s pace. Use the <strong>Crossing Map</strong> to plan how to move between viewing spots.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
       </AnimateIn>
 
-      {/* Disclaimer */}
       <p className="text-xs text-[var(--text-muted)] text-center">
-        This guide is community-driven and not affiliated with BMW Berlin-Marathon or SCC Events.
-        All information is sourced from runner and spectator reports, official guides, and local transit authorities.
+        Community-driven guide. Not affiliated with BMW Berlin-Marathon or SCC Events.
       </p>
     </div>
   );

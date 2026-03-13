@@ -181,11 +181,11 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
     <div>
       {/* Section Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
-          <Bed size={24} className="text-[var(--accent)]" />
+        <h2 className="text-3xl font-bold text-[var(--text)] mb-2 flex items-center gap-2">
+          <Bed size={28} className="text-[var(--accent-gold)]" />
           Where To Stay
         </h2>
-        <p className="text-sm text-[var(--text-secondary)]">
+        <p className="text-base text-[var(--text-secondary)]">
           Logistics-ranked neighborhoods: race-morning friction, finish extraction, spectator mobility
         </p>
         <p className="text-xs text-[var(--text-muted)] mt-1">

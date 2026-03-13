@@ -187,7 +187,7 @@ export default function HomePage() {
                         onClick={() => navigateToTab(tab.id)}
                         className={`px-3 py-2.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 flex items-center gap-1.5 ${
                           activeTab === tab.id
-                            ? 'border-[var(--accent)] text-[var(--accent)]'
+                            ? 'border-[var(--accent-gold)] text-[var(--accent)]'
                             : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text)] hover:border-[var(--border)]'
                         }`}
                       >
@@ -215,7 +215,7 @@ export default function HomePage() {
                         onClick={() => navigateToTab(tab.id)}
                         className={`px-2 py-2.5 text-xs font-medium whitespace-nowrap transition-colors border-b-2 flex items-center gap-1 ${
                           activeTab === tab.id
-                            ? 'border-[var(--accent)] text-[var(--accent)]'
+                            ? 'border-[var(--accent-gold)] text-[var(--accent)]'
                             : 'border-transparent text-[var(--text-secondary)] hover:text-[var(--text)]'
                         }`}
                       >
@@ -272,6 +272,14 @@ export default function HomePage() {
       <footer className="border-t border-[var(--border)] mt-8">
         <div className="berlin-stripe" />
         <div className="max-w-7xl mx-auto px-4 py-6">
+          {/* Race-day quick nav */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-5 pb-5 border-b border-[var(--border)]">
+            <span className="text-xs uppercase tracking-wider font-semibold text-[var(--text-muted)]">Race Day:</span>
+            <button onClick={() => navigateToTab('crossing-map')} className="text-sm text-[var(--accent)] hover:text-[var(--accent-gold)] transition-colors">Crossing Map</button>
+            <button onClick={() => navigateToTab('viewing-routes')} className="text-sm text-[var(--accent)] hover:text-[var(--accent-gold)] transition-colors">Viewing Routes</button>
+            <button onClick={() => navigateToTab('finish-strategy')} className="text-sm text-[var(--accent)] hover:text-[var(--accent-gold)] transition-colors">Finish Strategy</button>
+            <button onClick={() => navigateToTab('transit')} className="text-sm text-[var(--accent)] hover:text-[var(--accent-gold)] transition-colors">Transit</button>
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
             <p>
               Berlin Marathon Race Intelligence. Community-driven guide.
