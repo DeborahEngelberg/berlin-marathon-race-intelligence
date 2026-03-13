@@ -62,6 +62,7 @@ export interface Citation {
 export interface FailureMode {
   id: string;
   title: string;
+  audience: 'Runner' | 'Spectator' | 'Both';
   whyFails: string;
   veteranFix: string;
   alternatePlan: string;
