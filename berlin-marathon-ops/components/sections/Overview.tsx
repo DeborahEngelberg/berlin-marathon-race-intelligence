@@ -1,6 +1,7 @@
 'use client';
 
 import { User, Eye, MapPin, GitBranch, Flag, Train, Bed, Utensils, ArrowRight } from 'lucide-react';
+import AnimateIn from '@/components/ui/AnimateIn';
 
 interface Props {
   onNavigate: (tabId: string) => void;
@@ -61,30 +62,30 @@ export default function Overview({ onNavigate }: Props) {
           </div>
 
           <div className="relative z-10">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4 hero-stagger-1">
               <div className="h-1 w-8 bg-[var(--accent-gold)] rounded-full" />
               <span className="text-xs font-semibold tracking-widest uppercase text-blue-200">BMW Berlin-Marathon</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight hero-stagger-2">
               Your complete guide to<br />
               race day in Berlin
             </h2>
-            <p className="text-base sm:text-lg text-blue-100 max-w-2xl leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-blue-100 max-w-2xl leading-relaxed mb-8 hero-stagger-3">
               Whether you are running the marathon or cheering from the sidelines, this guide covers logistics, strategy, and lessons from experienced runners and spectators.
             </p>
 
             {/* Runner / Spectator decision — prominent CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 hero-stagger-4">
               <button
                 onClick={() => onNavigate('runner-guide')}
-                className="px-6 py-3 rounded-xl bg-white text-[var(--accent)] font-bold text-sm hover:bg-blue-50 transition-colors flex items-center justify-center gap-2 shadow-lg"
+                className="btn-press px-6 py-3 rounded-xl bg-white text-[var(--accent)] font-bold text-sm hover:bg-blue-50 flex items-center justify-center gap-2 shadow-lg"
               >
                 <User size={18} /> I&apos;m Running
               </button>
               <button
                 onClick={() => onNavigate('spectator-guide')}
-                className="px-6 py-3 rounded-xl border-2 border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+                className="btn-press px-6 py-3 rounded-xl border-2 border-white/40 text-white font-bold text-sm hover:bg-white/10 flex items-center justify-center gap-2"
               >
                 <Eye size={18} /> I&apos;m Spectating
               </button>
@@ -97,7 +98,7 @@ export default function Overview({ onNavigate }: Props) {
       </div>
 
       {/* Quick Navigation Cards */}
-      <div className="mb-10">
+      <AnimateIn className="mb-10">
         <h3 className="text-lg font-bold text-[var(--text)] mb-4">Explore the guide</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {NAV_CARDS.map(card => (
@@ -157,10 +158,10 @@ export default function Overview({ onNavigate }: Props) {
             </div>
           </button>
         </div>
-      </div>
+      </AnimateIn>
 
       {/* Most Important Tips */}
-      <div className="mb-10">
+      <AnimateIn className="mb-10" delay={100}>
         <h3 className="text-lg font-bold text-[var(--text)] mb-4">Most important tips</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {TIPS.map((tip, i) => (
@@ -175,9 +176,10 @@ export default function Overview({ onNavigate }: Props) {
             </div>
           ))}
         </div>
-      </div>
+      </AnimateIn>
 
       {/* How to use this guide */}
+      <AnimateIn delay={150}>
       <div className="card p-6 mb-6">
         <h3 className="text-lg font-bold text-[var(--text)] mb-3">How to use this guide</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-[var(--text-secondary)]">
@@ -199,6 +201,7 @@ export default function Overview({ onNavigate }: Props) {
           </div>
         </div>
       </div>
+      </AnimateIn>
 
       {/* Disclaimer */}
       <p className="text-xs text-[var(--text-muted)] text-center">

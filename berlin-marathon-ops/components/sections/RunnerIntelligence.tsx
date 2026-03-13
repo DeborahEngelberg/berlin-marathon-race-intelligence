@@ -92,7 +92,7 @@ function ChecklistGenerator() {
 
       <button
         onClick={() => setGenerated(true)}
-        className="px-4 py-2 rounded-lg bg-[var(--accent)] text-white text-sm font-medium hover:bg-[var(--accent-dark)] transition-colors"
+        className="btn-press px-4 py-2 rounded-lg bg-[var(--accent)] text-white text-sm font-medium hover:bg-[var(--accent-dark)] transition-colors"
       >
         Generate Checklist
       </button>
@@ -103,7 +103,7 @@ function ChecklistGenerator() {
             Total buffer: {totalBuffer} min | Risk level: {riskTolerance}
           </div>
           {timeline.map((step, i) => (
-            <div key={i} className={`flex gap-3 p-3 rounded-lg ${step.action === 'GUN TIME' ? 'bg-[var(--accent)]/10 border border-[var(--accent)]' : 'bg-[var(--bg-elevated)]'}`}>
+            <div key={i} className={`timeline-step flex gap-3 p-3 rounded-lg ${step.action === 'GUN TIME' ? 'bg-[var(--accent)]/10 border border-[var(--accent)]' : 'bg-[var(--bg-elevated)]'}`}>
               <span className="font-mono text-sm font-bold text-[var(--accent)] w-14 flex-shrink-0">{step.time}</span>
               <div>
                 <p className={`text-sm font-medium ${step.action === 'GUN TIME' ? 'text-[var(--accent)]' : 'text-[var(--text)]'}`}>

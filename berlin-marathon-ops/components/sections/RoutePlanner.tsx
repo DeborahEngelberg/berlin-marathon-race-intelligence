@@ -131,7 +131,7 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
                 <button
                   key={pace}
                   onClick={() => togglePace(pace)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                  className={`pill-interactive px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                     selectedPaces.includes(pace)
                       ? 'bg-[var(--accent)] text-white border-[var(--accent)]'
                       : 'bg-[var(--bg-elevated)] text-[var(--text-secondary)] border-[var(--border)] hover:border-[var(--accent)]'
@@ -153,7 +153,7 @@ export default function RoutePlanner({ filters }: { filters: FilterState }) {
                 <button
                   key={level}
                   onClick={() => toggleFeasibility(level)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                  className={`pill-interactive px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                     selectedFeasibility.includes(level)
                       ? 'bg-[var(--accent)] text-white border-[var(--accent)]'
                       : 'bg-[var(--bg-elevated)] text-[var(--text-secondary)] border-[var(--border)] hover:border-[var(--accent)]'

@@ -365,7 +365,7 @@ export default function FinishBlueprint({ filters }: { filters: FilterState }) {
                 </p>
                 <button
                   onClick={handleCopyPlan}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--accent)] text-white hover:bg-[var(--accent)]/90 transition-colors"
+                  className="btn-press inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--accent)] text-white hover:bg-[var(--accent)]/90 transition-colors"
                 >
                   {planCopied ? (
                     <>

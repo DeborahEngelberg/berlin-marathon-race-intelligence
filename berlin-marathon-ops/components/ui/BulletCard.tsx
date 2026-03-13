@@ -85,7 +85,7 @@ export default function BulletCard({ bullet }: { bullet: Bullet }) {
           </button>
           <button
             onClick={handleSave}
-            className="p-1.5 rounded hover:bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--accent)]"
+            className="bookmark-btn p-1.5 rounded hover:bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--accent)]"
             title={saved ? 'Remove from My Ops Plan' : 'Save to My Ops Plan'}
           >
             {saved ? <BookmarkCheck size={14} className="text-[var(--accent)]" /> : <Bookmark size={14} />}

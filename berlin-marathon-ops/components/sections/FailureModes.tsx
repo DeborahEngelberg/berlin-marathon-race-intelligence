@@ -18,6 +18,7 @@ import {
 import failuresData from '@/data/failures.json';
 import { FilterState, FailureMode } from '@/lib/types';
 import { saveItem, removeItem, isItemSaved } from '@/lib/store';
+import AnimateIn from '@/components/ui/AnimateIn';
 
 const failures = failuresData as FailureMode[];
 
@@ -221,13 +222,13 @@ export default function FailureModes({ filters }: { filters: FilterState }) {
       </div>
 
       {/* Grouped by audience */}
-      {GROUPS.map((group) => {
+      {GROUPS.map((group, gi) => {
         const items = grouped[group.key];
         if (!items || items.length === 0) return null;
         const GroupIcon = group.icon;
 
         return (
-          <div key={group.key} className="mb-8">
+          <AnimateIn key={group.key} className="mb-8" delay={gi * 100}>
             <div className="flex items-center gap-2 mb-3">
               <GroupIcon size={18} className={group.color} />
               <h3 className="text-base font-bold text-[var(--text)]">{group.label}</h3>
@@ -248,7 +249,7 @@ export default function FailureModes({ filters }: { filters: FilterState }) {
                 />
               ))}
             </div>
-          </div>
+          </AnimateIn>
         );
       })}
     </div>

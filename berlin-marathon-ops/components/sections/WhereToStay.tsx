@@ -456,7 +456,7 @@ export default function WhereToStay({ filters }: { filters: FilterState }) {
 
         <button
           onClick={() => setShowResults(true)}
-          className="px-5 py-2.5 text-sm font-semibold rounded-lg bg-[var(--accent)] text-white hover:opacity-90 transition-opacity"
+          className="btn-press px-5 py-2.5 text-sm font-semibold rounded-lg bg-[var(--accent)] text-white hover:opacity-90 transition-opacity"
         >
           Find my base
         </button>

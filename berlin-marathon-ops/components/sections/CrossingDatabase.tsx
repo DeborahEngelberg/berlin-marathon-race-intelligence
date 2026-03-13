@@ -171,7 +171,7 @@ export default function CrossingDatabase({ filters }: { filters: FilterState }) 
             <button
               key={ct.value}
               onClick={() => toggleType(ct.value)}
-              className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
+              className={`pill-interactive px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
                 isActive
                   ? typePillStyles[ct.value]
                   : 'bg-[var(--bg-elevated)] text-[var(--text-muted)] border-[var(--border)] hover:border-[var(--text-muted)]'

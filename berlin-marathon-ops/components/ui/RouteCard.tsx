@@ -87,7 +87,7 @@ export default function RouteCard({ route }: { route: Route }) {
           <button onClick={handleCopy} className="p-1.5 rounded hover:bg-[var(--bg-elevated)] text-[var(--text-muted)]" title="Copy">
             {copied ? <Check size={14} className="text-green-500" /> : <Copy size={14} />}
           </button>
-          <button onClick={handleSave} className="p-1.5 rounded hover:bg-[var(--bg-elevated)] text-[var(--text-muted)]" title="Save">
+          <button onClick={handleSave} className="bookmark-btn p-1.5 rounded hover:bg-[var(--bg-elevated)] text-[var(--text-muted)]" title="Save">
             {saved ? <BookmarkCheck size={14} className="text-[var(--accent)]" /> : <Bookmark size={14} />}
           </button>
         </div>
