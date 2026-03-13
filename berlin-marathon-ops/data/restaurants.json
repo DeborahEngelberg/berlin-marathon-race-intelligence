@@ -94,5 +94,335 @@
     "hoursProofText": "HOURS NOT FOUND",
     "citations": [{ "sourceName": "Berlin Marathon Community", "sourceUrl": "https://www.berlin-marathon.com" }],
     "confidence": "Med"
+  },
+  {
+    "id": "rest009",
+    "name": "Schwarzes Cafe",
+    "neighborhood": "Charlottenburg",
+    "station": "Savignyplatz (S3, S5, S7, S9)",
+    "purposeTags": ["breakfast", "pre-race"],
+    "orderNotes": "Open 24 hours on weekends — one of the only places in Berlin where you can get breakfast at 5–6am on race Sunday. Hearty German breakfast platters, eggs, coffee. A Charlottenburg institution since 1978.",
+    "reservationHack": "No reservation needed. Bohemian cafe with relaxed atmosphere. Will not be crowded at 5–6am.",
+    "hoursProofText": "Sat & Sun open 24 hours. Mon 8am–1am, Wed–Thu 8am–3am, Fri 8am–midnight.",
+    "citations": [
+      { "sourceName": "Schwarzes Cafe Official", "sourceUrl": "https://schwarzescafe-berlin.de/" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/schwarzes-cafe" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest010",
+    "name": "Francucci - Ristorante Dal 1962",
+    "neighborhood": "Charlottenburg",
+    "station": "Adenauerplatz (U7)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Family-owned Italian since 1962 on Kurfürstendamm. House-made tagliatelle, tagliolini, and pappardelle from imported durum wheat flour. Authentic carb-loading in an upscale setting. Also serves Chianina steak and Neapolitan pizza.",
+    "reservationHack": "Reserve well ahead for Saturday dinner marathon weekend. Call +49 30 3233318.",
+    "hoursProofText": "Open daily — verify exact Sunday hours. Typically lunch and dinner service.",
+    "citations": [
+      { "sourceName": "Francucci Official", "sourceUrl": "https://francucci.com/" },
+      { "sourceName": "Top10 Berlin - Upscale Italian", "sourceUrl": "https://www.top10berlin.de/en/cat/eating-257/upscale-italian-restaurants-2337/francuccis-ristorante-2863" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest011",
+    "name": "Il Casolare",
+    "neighborhood": "Kreuzberg",
+    "station": "Kottbusser Tor (U1, U8)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Legendary Kreuzberg pizza spot next to Admiralsbrücke on the Landwehrkanal. Generously-sized thin-crust pizzas with creative toppings including vegan options. Casual atmosphere, perfect for a relaxed Saturday night carb-load.",
+    "reservationHack": "No reservations — arrive before 19:00 on Saturday to avoid long waits. Very popular.",
+    "hoursProofText": "Open daily, typically noon until late evening.",
+    "citations": [
+      { "sourceName": "Yelp Berlin", "sourceUrl": "https://www.yelp.com/biz/il-casolare-berlin" },
+      { "sourceName": "The Berliner - Best Pizza", "sourceUrl": "https://www.the-berliner.com/food/best-pizza-berlin/" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest012",
+    "name": "Zola",
+    "neighborhood": "Kreuzberg",
+    "station": "Schönleinstraße (U8)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Wood-fired Neapolitan pizza on Paul-Lincke-Ufer (the 'Kreuzberg Riviera'). Pizzas spend 60–90 seconds in a genuine Stefano Ferrara oven from Naples — charred blisters, perfectly melted cheese. Italian-imported ingredients, dough rested 24+ hours.",
+    "reservationHack": "Reservations possible, call +49 30 55204275. Book ahead for Saturday evening.",
+    "hoursProofText": "Kitchen open daily 12:00–22:00.",
+    "citations": [
+      { "sourceName": "Berlin Food Stories", "sourceUrl": "https://www.berlinfoodstories.com/reviews/zola" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/zola" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest013",
+    "name": "Al Contadino Sotto le Stelle",
+    "neighborhood": "Mitte",
+    "station": "Oranienburger Straße (S1, S2, S25)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Upscale Italian on Auguststraße since 1997. House-made pasta is the main event — try the tagliatelle or pappardelle. Ceiling covered in stars. Celebrity favorite (Brad Pitt, Quentin Tarantino visited during Inglorious Basterds filming). Mozzarella Bar next door for quick bites.",
+    "reservationHack": "Essential to reserve for Saturday dinner marathon weekend. Very popular with limited seating.",
+    "hoursProofText": "Open for dinner daily. Verify exact Sunday hours.",
+    "citations": [
+      { "sourceName": "Top10 Berlin - Celebrity Restaurants", "sourceUrl": "https://www.top10berlin.de/en/cat/eating-257/celebrity-restaurants-2552/al-contadino-sotto-le-stelle-3380" },
+      { "sourceName": "true-italian.com", "sourceUrl": "https://true-italian.com/2017/10/23/al-contadino-sotto-le-stelle/" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest014",
+    "name": "Bocca di Bacco",
+    "neighborhood": "Mitte",
+    "station": "Friedrichstraße (U6, S1, S2, S5, S7)",
+    "purposeTags": ["carb-load", "pre-race"],
+    "orderNotes": "Upscale Tuscan Italian on Friedrichstraße. Excellent pasta, extensive wine list (500+ Italian wines). Celebrity clientele. Good for a special Saturday night carb-load dinner. Michelin-listed.",
+    "reservationHack": "Reserve well in advance — call +49 30 20672828. Online reservations only 1 day ahead.",
+    "hoursProofText": "Tue 12:00–00:00, Wed 17:30–00:00, Thu 12:00–00:00. Closed some days — verify Saturday hours.",
+    "citations": [
+      { "sourceName": "Bocca di Bacco Official", "sourceUrl": "https://www.boccadibacco.de/en/" },
+      { "sourceName": "Michelin Guide", "sourceUrl": "https://guide.michelin.com/en/berlin-region/berlin/restaurant/bocca-di-bacco" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest015",
+    "name": "Dicke Wirtin",
+    "neighborhood": "Charlottenburg",
+    "station": "Savignyplatz (S3, S5, S7, S9)",
+    "purposeTags": ["carb-load", "pre-race", "spectator-hangout"],
+    "orderNotes": "Traditional Berlin pub-restaurant on Savignyplatz, open since the 1960s. Hearty German dishes — schnitzel, Eisbein, Königsberger Klopse. 9 beers on tap. Good for a solid pre-race dinner or spectator fueling near the start area.",
+    "reservationHack": "Reservations recommended for Saturday dinner. Open daily from 11:00, 365 days a year.",
+    "hoursProofText": "Open daily from 11:00. Open 365 days/year.",
+    "citations": [
+      { "sourceName": "Dicke Wirtin Official", "sourceUrl": "https://dicke-wirtin.de/en/" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/dicke-wirtin" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest016",
+    "name": "Cafe Einstein Stammhaus",
+    "neighborhood": "Schöneberg / Tiergarten",
+    "station": "Nollendorfplatz (U1, U2, U3, U4)",
+    "purposeTags": ["breakfast", "post-race", "spectator-hangout"],
+    "orderNotes": "Grand Viennese-style coffeehouse since 1978, in a historic villa on Kurfürstenstraße. Excellent breakfast, Apfelstrudel, Wiener Schnitzel. Good for spectators between viewing the start and catching runners later on the course. Near Schöneberg section of course.",
+    "reservationHack": "Walk-ins usually fine for breakfast. Reserve for lunch on race Sunday.",
+    "hoursProofText": "Mon–Sun 08:00–00:30. Opens at 8am daily.",
+    "citations": [
+      { "sourceName": "Cafe Einstein Stammhaus Official", "sourceUrl": "https://www.cafeeinstein.com/" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/cafe-einstein" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest017",
+    "name": "Einstein Unter den Linden",
+    "neighborhood": "Mitte",
+    "station": "Brandenburger Tor (U55) / Friedrichstraße (U6, S-Bahn)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Classic cafe on Unter den Linden, short walk from Brandenburg Gate finish area. Austrian cuisine — schnitzel, strudel, great coffee. Perfect for waiting for your runner to finish, or a celebratory post-race meal.",
+    "reservationHack": "Reserve for Sunday lunch on marathon weekend. Very close to finish area so will be busy.",
+    "hoursProofText": "Sunday 10:00–18:00. Weekdays open longer.",
+    "citations": [
+      { "sourceName": "Einstein UdL Official", "sourceUrl": "http://einsteinudl.grillroyal.com/en/" },
+      { "sourceName": "OpenTable", "sourceUrl": "https://www.opentable.com/r/einstein-unter-den-linden-berlin" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest018",
+    "name": "Gaffel Haus Berlin",
+    "neighborhood": "Mitte",
+    "station": "Friedrichstraße (U6, S1, S2, S5, S7)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Cologne-style brewhouse in Mitte, 10 min walk from Brandenburg Gate. Traditional German cuisine with Rhenish twist. Kölsch beer on tap, hearty schnitzel and Sauerbraten. 10-min walk to Reichstag, Brandenburg Gate, Museum Island.",
+    "reservationHack": "Walk-ins usually possible given large space. Reserve for groups on race Sunday.",
+    "hoursProofText": "Mon–Sat 12:00–00:00. Budget lunch Mon–Fri 12:00–15:00. Verify Sunday hours.",
+    "citations": [
+      { "sourceName": "Gaffel Haus Berlin Official", "sourceUrl": "https://www.gaffel-haus-berlin.de/index.php/en/" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/restaurant-tips-around-berlin-sights" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest019",
+    "name": "Lutter & Wegner am Gendarmenmarkt",
+    "neighborhood": "Mitte",
+    "station": "Stadtmitte (U2, U6) / Hausvogteiplatz (U2)",
+    "purposeTags": ["post-race", "carb-load"],
+    "orderNotes": "Historic Berlin institution since 1811 on the Gendarmenmarkt. Famous Wiener Schnitzel, Kaiserschmarren, Tafelspitz. Extensive wine list (750+ wines). Upscale post-race celebration dinner or Saturday carb-load.",
+    "reservationHack": "Reserve well ahead for Saturday dinner and Sunday lunch marathon weekend.",
+    "hoursProofText": "Sunday 12:00–01:00.",
+    "citations": [
+      { "sourceName": "Lutter & Wegner Official", "sourceUrl": "https://l-w-berlin.de/en/" },
+      { "sourceName": "Falstaff", "sourceUrl": "https://www.falstaff.com/en/restaurants/lutter-wegner-am-gendarmenmarkt-berlin" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest020",
+    "name": "Hofbräu Wirtshaus Berlin",
+    "neighborhood": "Mitte / Alexanderplatz",
+    "station": "Alexanderplatz (U2, U5, U8, S-Bahn)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Massive Bavarian beer hall (1,600 seats) at Alexanderplatz. Hofbräu beer, Schweinshaxe, Weißwurst, pretzels. Live Bavarian music. Great spectator hangout — big enough that you can always find a table. Hearty post-race refuel.",
+    "reservationHack": "Usually not needed given enormous capacity. Walk-in friendly.",
+    "hoursProofText": "Mon–Thu & Sun 10:00–01:00, Fri–Sat 10:00–02:00.",
+    "citations": [
+      { "sourceName": "Hofbräu Wirtshaus Official", "sourceUrl": "https://www.hofbraeu-wirtshaus.de/berlin/" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/hofbrau-alexanderplatz" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest021",
+    "name": "Spreegold (Bikini Berlin)",
+    "neighborhood": "Charlottenburg",
+    "station": "Zoologischer Garten (U2, U9, S-Bahn)",
+    "purposeTags": ["breakfast", "spectator-hangout"],
+    "orderNotes": "All-day breakfast cafe in Bikini Berlin mall, right at Zoo station near the marathon start. Breakfast platters, pancakes, eggs, porridge, smoothies. Rooftop terrace with zoo views. Also has homemade pasta for later in the day.",
+    "reservationHack": "No reservation needed for breakfast. Arrive early on race Sunday.",
+    "hoursProofText": "Opens 09:00 daily. Will not help runners needing pre-6am food, but good for spectators heading to the start.",
+    "citations": [
+      { "sourceName": "Spreegold Official", "sourceUrl": "https://www.spreegold.com/en/spreegold-restaurants/spreegold-bikini-berlin/" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/spreegold" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest022",
+    "name": "Spreegold (Alexanderplatz / Rosa-Luxemburg-Str.)",
+    "neighborhood": "Mitte",
+    "station": "Alexanderplatz (U2, U5, U8, S-Bahn)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "All-day casual dining near Alexanderplatz. Freshly cooked meals: breakfast platters, homemade pasta, salads, sandwiches. Good recovery meal spot — lighter options alongside hearty dishes. Also paleo-friendly menu items.",
+    "reservationHack": "No reservation typically needed. Walk-in friendly.",
+    "hoursProofText": "Sun 08:30–21:00. Mon–Thu 08:30–21:00, Fri–Sat 08:30–22:00.",
+    "citations": [
+      { "sourceName": "Spreegold Official", "sourceUrl": "https://www.spreegold.com/en/home-english/" },
+      { "sourceName": "Yelp", "sourceUrl": "https://www.yelp.com/biz/spreegold-berlin-2" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest023",
+    "name": "Berliner Republik",
+    "neighborhood": "Mitte",
+    "station": "Friedrichstraße (U6, S1, S2, S5, S7)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Large beer hall on the Spree riverbank near Hauptbahnhof and Friedrichstraße. 18 beers on tap with fluctuating stock-market-style pricing ('Brokers Bierbörse'). German pub food. Outdoor terrace on the river. Fun post-race celebration spot.",
+    "reservationHack": "Large venue, walk-ins usually fine. Good for groups.",
+    "hoursProofText": "Sunday hours vary by source — approximately 10:00 or 11:00 until late. Call +49 30 30872293 to confirm.",
+    "citations": [
+      { "sourceName": "Top10 Berlin", "sourceUrl": "https://www.top10berlin.de/en/cat/night-life-259/special-bars-twist-2165/berliner-republik-2466" },
+      { "sourceName": "Berlin WelcomeCard", "sourceUrl": "https://www.berlin-welcomecard.de/en/partner/berliner-republik" }
+    ],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest024",
+    "name": "Tiergartenquelle",
+    "neighborhood": "Tiergarten / Moabit",
+    "station": "Tiergarten (S3, S5, S7, S9)",
+    "purposeTags": ["spectator-hangout", "post-race"],
+    "orderNotes": "Classic Berlin pub directly under S-Bahn Tiergarten station, near the park. Draft beer and hearty German dishes in a dark-wood tavern. Leafy beer garden. Over 80 years old. Ideal spectator pitstop near the start/finish area of the marathon.",
+    "reservationHack": "Usually walk-in friendly. Beer garden seating first-come-first-served.",
+    "hoursProofText": "Open daily — verify exact Sunday hours. Typically opens around noon.",
+    "citations": [
+      { "sourceName": "Yelp", "sourceUrl": "https://www.yelp.com/biz/tiergartenquelle-berlin-2" },
+      { "sourceName": "TripAdvisor", "sourceUrl": "https://www.tripadvisor.com/Restaurant_Review-g187323-d718383-Reviews-Tiergarten_quelle-Berlin.html" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest025",
+    "name": "Lon Men's Noodle House",
+    "neighborhood": "Charlottenburg",
+    "station": "Savignyplatz (S3, S5, S7, S9) / Zoologischer Garten (U2, U9)",
+    "purposeTags": ["carb-load", "pre-race", "post-race"],
+    "orderNotes": "Authentic Taiwanese noodle house on Kantstraße since 2003. Hearty noodle soups and wontons — an alternative carb-load for runners tired of pasta. No-frills, fast, filling. On Berlin's famous 'Asian food mile' (Kantstraße).",
+    "reservationHack": "No reservations. Popular spot — expect a short wait at peak times.",
+    "hoursProofText": "Mon–Sun 12:00–23:00.",
+    "citations": [
+      { "sourceName": "Berlin Food Stories", "sourceUrl": "https://www.berlinfoodstories.com/reviews/lon-mens-noodle-house-your-taiwanese-dream-come-true" },
+      { "sourceName": "Yelp", "sourceUrl": "https://www.yelp.com/biz/lon-mens-noodle-house-berlin" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest026",
+    "name": "Cafe Morgenland",
+    "neighborhood": "Kreuzberg",
+    "station": "Görlitzer Bahnhof (U1)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Legendary Kreuzberg brunch institution on Skalitzer Straße. Sunday brunch buffet (10:00–16:00) with hummus, bulgur, couscous, oriental meatballs, stuffed peppers, avocado cream, sheep's cheese. Perfect post-race recovery feast.",
+    "reservationHack": "Reservations essential for Sunday brunch — book well ahead on marathon weekend.",
+    "hoursProofText": "Sunday 10:00–01:00. Brunch buffet 10:00–16:00.",
+    "citations": [
+      { "sourceName": "Top10 Berlin - Sunday Brunch", "sourceUrl": "https://www.top10berlin.de/en/cat/eating-257/sunday-brunch-1158/cafe-restaurant-morgenland-1388" },
+      { "sourceName": "Yelp", "sourceUrl": "https://www.yelp.com/biz/caf%C3%A9-morgenland-berlin-2" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest027",
+    "name": "Hallesches Haus",
+    "neighborhood": "Kreuzberg",
+    "station": "Hallesches Tor (U1, U6)",
+    "purposeTags": ["breakfast", "spectator-hangout"],
+    "orderNotes": "Beautiful cafe and general store in a 270sqm vaulted space in Kreuzberg. Excellent coffee, homemade granola, waffles with coconut yoghurt, light brunch dishes. Private garden. Near the marathon course as it passes through Kreuzberg.",
+    "reservationHack": "No reservations. Arrive early for Sunday brunch seating.",
+    "hoursProofText": "Cafe Mon–Sun 10:00–17:00 (kitchen until 15:30).",
+    "citations": [
+      { "sourceName": "Hallesches Haus Official", "sourceUrl": "https://www.hallescheshaus.com/en" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/hallesches-haus" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest028",
+    "name": "Imren Grill",
+    "neighborhood": "Kreuzberg",
+    "station": "Kottbusser Tor (U1, U8)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Old-school champion of beef döner in Berlin. Hand-stacked yaprak döner (layers of real beef, not processed). Multiple locations — Boppstraße in Kreuzberg is the original and best. More authentic alternative to Mustafa's with shorter queues.",
+    "reservationHack": "Counter service, no reservation. Quick in-and-out.",
+    "hoursProofText": "Kreuzberg (Boppstr.) daily 11:00–23:00.",
+    "citations": [
+      { "sourceName": "Berlin Food Stories", "sourceUrl": "https://www.berlinfoodstories.com/map/imren" },
+      { "sourceName": "Timeout Berlin", "sourceUrl": "https://www.timeout.com/berlin/restaurants-and-cafes/imren-grill" }
+    ],
+    "confidence": "High"
+  },
+  {
+    "id": "rest029",
+    "name": "Markthalle Neun",
+    "neighborhood": "Kreuzberg",
+    "station": "Görlitzer Bahnhof (U1)",
+    "purposeTags": ["spectator-hangout", "post-race"],
+    "orderNotes": "Historic market hall in Kreuzberg with artisan food vendors. Open Thu–Sun. Saturday weekly market is excellent for pre-race fuel — fresh bread, cheese, prepared foods. Every 3rd Sunday hosts a Breakfast Market (10:00–17:00). Check if marathon Sunday aligns.",
+    "reservationHack": "No reservation — market hall, walk in and browse vendors.",
+    "hoursProofText": "Thu–Sun 10:00–20:00. Breakfast Market every 3rd Sunday 10:00–17:00.",
+    "citations": [
+      { "sourceName": "Markthalle Neun Official", "sourceUrl": "https://markthalleneun.de/en" },
+      { "sourceName": "visitBerlin", "sourceUrl": "https://www.visitberlin.de/en/markthalle-neun" }
+    ],
+    "confidence": "Med"
+  },
+  {
+    "id": "rest030",
+    "name": "Dudu",
+    "neighborhood": "Mitte",
+    "station": "Rosenthaler Platz (U8)",
+    "purposeTags": ["post-race", "spectator-hangout"],
+    "orderNotes": "Popular Japanese-Vietnamese fusion on Torstraße in Mitte. Sushi, pho, curries, and Asian fusion dishes. Lighter post-race option for those not wanting heavy German food. Trendy atmosphere, family-run since 2008.",
+    "reservationHack": "Reserve ahead or arrive early — very popular. Tables fill quickly.",
+    "hoursProofText": "Mon–Sat 12:00–00:00, Sun 13:00–00:00.",
+    "citations": [
+      { "sourceName": "Dudu Berlin Official", "sourceUrl": "https://dudu-berlin.de/" },
+      { "sourceName": "Timeout Berlin", "sourceUrl": "https://www.timeout.com/berlin/restaurants/dudu" }
+    ],
+    "confidence": "High"
   }
 ]
